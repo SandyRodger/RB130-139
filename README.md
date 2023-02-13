@@ -5,7 +5,7 @@
 - [Exercises](#exercises)
 - [Extra resources](#extra-resources)
 ## Study Guide
-- Blocks
+- [Blocks](https://github.com/SandyRodger/RB130-139/blob/main/Blocks)
   - Closures
   - Variable Scope and Binding
   - What are blocks?
