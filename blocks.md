@@ -274,7 +274,7 @@ time_it { sleep(3) }              # It took 3.003767 seconds.
 time_it { "hello world" }         # It took 3.0e-06 seconds.
                                   # => nil
 ```
-Another very important use for sandwich code is resource management. Many OS systems require the developer to first allocate a portion of a resource and after to clean up and free that resource. Omitting this process can lead to system crashes, memory leaks and file system corruption.
+Another very important use for sandwich code is resource management. Many OS interfaces require the developer to first allocate a portion of a resource and after to clean up and free that resource. Omitting this process can lead to system crashes, memory leaks and file system corruption.
 
 For instance:
 
