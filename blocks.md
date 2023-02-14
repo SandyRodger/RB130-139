@@ -7,8 +7,11 @@
 - [Yiedling with an argument](#yiedling-with-an-argument)
 - [Arity](#arity)
 - [Return value of yielding to a block](#return-value-of-yielding-to-a-block)
-- [When to use blocks in your own methods](#when–to–use-blocks-in-your-own-methods)
-
+- [When to use blocks in your own methods](#when-to-use-blocks-in-your-own-methods)
+- [Flags](#flags)
+- [Methods with an explicit block parameter](#methods-with-an-explicit-block-parameter)
+- [Using Closures](#using-closures)
+- [Summary](#summary)
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
@@ -211,3 +214,146 @@ compare('hello') { |word| puts "hi" }
 
 1. Defer implementation code to method caller.
 2. Sandwich code.
+
+1. There is a **method writer** and a **method caller** and they could be the same person. If the method writer wants to leave some decisions to the method caller they can do so with a block.
+```ruby
+def compare(str)
+  puts "Before: #{str}"
+	yield(str)
+  puts "After: #{str}"
+end
+
+compare("hello"){|str|str.upcase!}
+
+# Before: hello
+# After: HELLO
+# => nil
+```
+### [Flags](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+
+Without a block one would need to use a flag. A flag is an argument passed to a method to direct what will happen in the method:
+
+```ruby
+
+def compare(str, flag)
+  after = case flag
+          when :upcase
+            str.upcase
+          when :capitalize
+            str.capitalize
+          # etc, we could have a lot of 'when' clauses
+          end
+
+  puts "Before: #{str}"
+  puts "After: #{after}"
+end
+
+compare("hello", :upcase)
+
+# Before: hello
+# After: HELLO
+# => nil
+```
+But a block is superior because it allows the user to ***refine*** the method, without altering it for other users. Many of Ruby's built-in methods are built in this way, ie. `Array#select`. If you are tweaking a method a little bit in many different places, you may be better off yielding to a block.
+
+2. Sandwich code
+
+This is code that performs a before and after, like the `#compare` method above. But before and after what? You can leave that up to the method caller. Timing, logging and notification systems are all good examples:
+```ruby
+def time_it
+  time_before = Time.now
+  yield                       # execute the implicit block
+  time_after= Time.now
+
+  puts "It took #{time_after - time_before} seconds."
+end
+
+time_it { sleep(3) }              # It took 3.003767 seconds.
+                                  # => nil
+
+time_it { "hello world" }         # It took 3.0e-06 seconds.
+                                  # => nil
+```
+Another very important use for sandwich code is resource management. Many OS systems require the developer to first allocate a portion of a resource and after to clean up and free that resource. Omitting this process can lead to system crashes, memory leaks and file system corruption.
+
+For instance:
+
+```ruby
+my_file = File.open("some_file.txt", "w+")          # creates a file called "some_file.txt" with write/read permissions
+# write to this file using my_file.write
+my_file.close
+```
+### [Methods with an explicit block parameter](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+
+```ruby
+
+def test(&block)
+  puts "What's &block? #{block}"
+end
+
+test{|n| n * 2} # => What's &block? #<Proc:0x00007fc2388db8f8@delete_me.rb:5>
+
+```
+These are when you want to manage your block like any other object. Reassign it, pass it to other methods, invoke it multiple times. The `&` converts the block into a "simple" proc object. An implicit block can only be yielded to and tested with `#block_given?`. With an explicit block one has greater flexibility. For example:
+
+```ruby
+def method1(&block)
+	puts 1
+	method2(block)
+	puts 5
+end
+
+def method2(block)
+	puts 2
+	block.call(3)
+	puts 4
+end
+
+method1 {|n| puts n}           # => 1 2 3 4 5
+```
+### [Using Closures](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+```ruby
+def for_each_in(arr)
+  arr.each { |element| yield element }
+end
+
+arr = [1, 2, 3, 4, 5]
+results = [0]
+
+for_each_in(arr) do |number|
+  total = results[-1] + number
+  results.push(total)
+end
+
+p results # => [0, 1, 3, 6, 10, 15]
+```
+The block is invoked within the `for_each_in` method and shouldn't have access to the `results` array, but it does through closure.
+
+When methods return Procs we can do cool things :
+```ruby
+def sequence
+  counter = 0
+  Proc.new { counter += 1 }
+end
+
+s1 = sequence
+p s1.call           # 1
+p s1.call           # 2
+p s1.call           # 3
+puts
+
+s2 = sequence
+p s2.call           # 1
+p s1.call           # 4
+p s2.call           # 2
+```
+Note that each `sequence` call has its own copy of `counter`.
+
+### [Summary](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+
+- Blocks are one way that Ruby implements closures, which are chunks of code that can be passed around.
+- Blocks won't complain if the wrong number of arguments are passed in.
+- Blocks return a value.
+- Blocks allow the method writer to defer implementation to the method caller.
+- Blocks are good for 'sandwich code'.
+- Methods and blocks can return procs/lambdas.
