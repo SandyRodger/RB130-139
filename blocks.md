@@ -7,6 +7,7 @@
 - [Yiedling with an argument](#yiedling-with-an-argument)
 - [Arity](#arity)
 - [Return value of yielding to a block](#return-value-of-yielding-to-a-block)
+- [When to use blocks in your own methods](#when–to–use-blocks-in-your-own-methods)
 
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
@@ -173,3 +174,40 @@ end
 The lesson here is that blocks will ignore extra arguments. In `#test1` the extra block argument is ignored and in `test2` the block local variable is assigned to `nil`. This is called **lenient arity** and applies to blocks and procs, but not lambdas, which have **strict arity**. Strict here means you have to pass in the number of arguments that the lambda expects. The topic of arity goes super deep, so know that this is just a superficial look. Most importantly, if the method/block allows for optional arguments, the arity rules do not apply to those arguments.
 
 ### [Return value of yielding to a block](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+```ruby
+def compare(str)
+  puts "Before: #{str}".   
+  after = yield(str)
+  puts "After: #{after}". 
+end
+
+compare('hello') { |word| word.upcase } 
+
+# Before: hello
+# After: HELLO
+# => nil
+
+compare('hello') { |word| word.slice(1..2) }
+
+# Before: hello
+# After: el
+# => nil
+
+compare('hello') { |word| "nothing to do with anything" }
+
+# Before: hello
+# After: nothing to do with anything
+# => nil
+
+compare('hello') { |word| puts "hi" }
+
+# Before: hello
+# hi
+# After:
+# => nil
+```
+
+###[When to use blocks in your own methods](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+
+1. Defer implementation code to method caller.
+2. Sandwich code.
