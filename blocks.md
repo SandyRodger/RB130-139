@@ -4,6 +4,9 @@
 - [Calling methods with blocks](#calling-methods-with-blocks)
 - [Writing methods that take blocks](#writing-methods-that-take-blocks)
 - [Yielding](#yielding)
+- [Yiedling with an argument](#yiedling-with-an-argument)
+- [Arity](#arity)
+- [Return value of yielding to a block](#return-value-of-yielding-to-a-block)
 
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
@@ -118,3 +121,55 @@ Note that in line 3 execution jumps to somewhere else, just like a method. This 
 ### [Yiedling with an argument](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
 
+```ruby
+3.times do |num|
+  puts num
+end
+```
+
+- `3` is the calling object
+- `times` is the method being called
+- `do...end` is the block
+- `num` between the pipes is the block parameter
+- `num` within the block is the block local variable, with scope constrained to the block.
+
+*It is important that the block local variable does not shadow variables outside the block, which would make variables outside the block inaccessible.*
+
+```ruby
+# method implementation
+def increment(number)
+  if block_given?
+    yield(number + 1)
+  end
+  number + 1
+end
+
+# method invocation
+increment(5) do |num|
+  puts num
+end
+```
+
+### [Arity](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+
+Arity is the rules of how many arguments you must pass to a block/proc/lambda.
+
+```ruby
+def test1
+  yield(1, 2)
+end
+
+test1 { |num| puts num } # => 1
+
+def test2
+  yield(1)
+end
+
+test2 do |num1, num2|
+  puts "#{num1} #{num2}"  # => 1 (with an extra space)
+end
+```
+
+The lesson here is that blocks will ignore extra arguments. In `#test1` the extra block argument is ignored and in `test2` the block local variable is assigned to `nil`. This is called **lenient arity** and applies to blocks and procs, but not lambdas, which have **strict arity**. Strict here means you have to pass in the number of arguments that the lambda expects. The topic of arity goes super deep, so know that this is just a superficial look. Most importantly, if the method/block allows for optional arguments, the arity rules do not apply to those arguments.
+
+### [Return value of yielding to a block](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
