@@ -16,3 +16,5 @@
 - Symbol to Proc
 - Arity
 - Blocks vs Procs vs Lambdas
+
+Closures
