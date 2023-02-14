@@ -207,7 +207,7 @@ compare('hello') { |word| puts "hi" }
 # => nil
 ```
 
-###[When to use blocks in your own methods](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
+### [When to use blocks in your own methods](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
 1. Defer implementation code to method caller.
 2. Sandwich code.
