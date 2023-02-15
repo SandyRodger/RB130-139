@@ -15,7 +15,7 @@
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
-  A savable "chunk of code". It binds the artifacts around it (like copying and pasting a cell in microsoft Excel) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remains in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects is called its **binding**. 
+  A savable "chunk of code". It binds the artifacts around it (like copying and pasting a cell with its refrences in Microsoft Excel) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remains in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects is called its **binding**. 
 
 In Ruby a closure is handled with a Proc, Block or Lambda. Proc is a [class](https://docs.ruby-lang.org/en/2.6.0/Proc.html) which can instantiate proc objects, the other two are not.
 
@@ -65,20 +65,23 @@ end
 => { c: 3, d: 4, e: 5 }
 ```
 
-In these three examples the blocks return their calling object or a new object according to the block. Sometimes the block;s code affects the return value and sometimes not - and that is what we need to focus on now.
+In these three examples the blocks return their calling object or a new object according to the block. Sometimes the block's code affects the return value and sometimes not - and that is what we need to focus on now.
 
 The code in the block is not the method implementation. It is passed into the method and the method decides what to do with it. Often looking at the documentation and experimenting is the best way to understand how a particular method treats a block.
 
 ### [Writing methods that take blocks](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
 Every Ruby method already takes a block.
+```ruby
+puts("boy"){puts "girl"} # => "boy"
+```
 
 ```ruby
 def hello
-  "hello!"
+  puts "hello!"
 end
 
-hello { puts 'hi' }                      # => "hi"
+hello { puts 'hi' } # => hello!
 ```
 This shows that in Ruby every method can take an optional block as an implicit argument.
 
@@ -215,7 +218,8 @@ compare('hello') { |word| puts "hi" }
 1. Defer implementation code to method caller.
 2. Sandwich code.
 
-1. There is a **method writer** and a **method caller** and they could be the same person. If the method writer wants to leave some decisions to the method caller they can do so with a block.
+
+There is a **method writer** and a **method caller** and they could be the same person. If the method writer wants to leave some decisions to the method caller they can do so with a block.
 ```ruby
 def compare(str)
   puts "Before: #{str}"
