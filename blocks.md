@@ -11,7 +11,10 @@
 - [Flags](#flags)
 - [Methods with an explicit block parameter](#methods-with-an-explicit-block-parameter)
 - [Using Closures](#using-closures)
-- [Summary](#summary)
+- [Writing methods which take blocks - Summary](#summary)
+- [Walk-through: Build a 'times' method](#walk-through-build-a-times-method)
+- [Walk-through: Build an each method](#walk-through-build-an-each-method)
+- [Assignment: Build a 'select' method](#assignment-build-a-select-method)
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
@@ -27,6 +30,21 @@ Let's take apart this block:
 [1, 2, 3].each do |num|
   puts num
 end
+```
+### [Assignment: Build a 'select' method](https://launchschool.com/lessons/c0400a9c/assignments/5bc68af0)
+
+```ruby
+array = [1, 2, 3, 4, 5]
+
+def select(arr)
+	arr.each_with_object([]) do |n, output| 
+		output.push(n) if yield(n)
+	end
+end
+
+p select(array) { |num| num.odd? }      # => [1, 3, 5]
+p select(array) { |num| puts num }      # => [], because "puts num" returns nil and evaluates to false
+p select(array) { |num| num + 1 }       # => [1, 2, 3, 4, 5], because "num + 1" evaluates to true
 ```
 
 We have:
@@ -361,3 +379,68 @@ Note that each `sequence` call has its own copy of `counter`.
 - Blocks allow the method writer to defer implementation to the method caller.
 - Blocks are good for 'sandwich code'.
 - Methods and blocks can return procs/lambdas.
+
+### [Walk-through Build a times method](https://launchschool.com/lessons/c0400a9c/assignments/cd792c69)
+```ruby
+# method implementation
+def times(number)
+  counter = 0
+  while counter < number do
+    yield(counter)
+    counter += 1
+  end
+
+  number                      # return the original method argument to match behavior of `Integer#times`
+end
+
+# method invocation
+times(5) do |num|
+  puts num
+end
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+# => 5
+```
+### [Walk-through Build an each method](https://launchschool.com/lessons/c0400a9c/assignments/c7af0c78)
+```ruby
+def each(array)
+  counter = 0
+
+  while counter < array.size
+    yield(array[counter])                           # yield to the block, passing in the current element to the block
+    counter += 1
+  end
+
+  array                                             # returns the `array` parameter, similar in spirit to how `Array#each` returns the caller
+end
+
+each([1, 2, 3, 4, 5]) do |num|
+  puts num
+end
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# => [1, 2, 3, 4, 5]
+```
+### [Assignment build a select method](https://launchschool.com/lessons/c0400a9c/assignments/5bc68af0)
+```ruby
+array = [1, 2, 3, 4, 5]
+
+def select(arr)
+	arr.each_with_object([]) do |n, output| 
+		output.push(n) if yield(n)
+	end
+end
+
+p select(array) { |num| num.odd? }      # => [1, 3, 5]
+p select(array) { |num| puts num }      # => [], because "puts num" returns nil and evaluates to false
+p select(array) { |num| num + 1 }       # => [1, 2, 3, 4, 5], because "num + 1" evaluates to true
+```
