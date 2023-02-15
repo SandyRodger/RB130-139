@@ -18,6 +18,8 @@
 - [Assignment build a reduce method](#assignment-build-a-reduce-method)
 - [Assignment: TodoList](#assignment-todolist)
 - [Blocks and Variable Scope](#blocks-and-variable-scope)
+- [Symbol to proc](#symbol-to-proc)
+- [Lesson 1 Summary](#lesson-1-summary)
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
@@ -478,3 +480,112 @@ What we're seeing is two iterations through the array. On the first iteration `a
 [my todo list with more methods](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/08_more_todo_methods.rb)
 
 ### [Blocks and Variable Scope](https://launchschool.com/lessons/c0400a9c/assignments/fd86ea2e)
+
+Remember that with blocks you can see out, but not in:
+```ruby
+level_1 = "outer-most variable"
+
+[1, 2, 3].each do |n|                     # block creates a new scope
+  level_2 = "inner variable"
+
+  ['a', 'b', 'c'].each do |n2|            # nested block creates a nested scope
+    level_3 = "inner-most variable"
+
+    # all three level_X variables are accessible here
+  end
+
+  # level_1 is accessible here
+  # level_2 is accessible here
+  # level_3 is not accessible here
+
+end
+
+# level_1 is accessible here
+# level_2 is not accessible here
+# level_3 is not accessible here
+```
+(This can be confusing because method invocation without parentheses looks like local variable referencing.)
+
+### [Closure and binding](https://launchschool.com/lessons/c0400a9c/assignments/fd86ea2e)
+
+Closures keep a memory of artifacts in their scope. In the example below this supercedes method scoping rules and allows the `name` local variable to be available within the method without being passed in.
+
+```ruby
+def call_me(some_code)
+  some_code.call    # call will execute the "chunk of code" that gets passed in
+end
+
+name = "Robert"
+chunk_of_code = Proc.new {puts "hi #{name}"}
+
+call_me(chunk_of_code) # => hi Robert
+```
+Even reassigning `name` after the proc is created is accurately reflected in the proc call. **Closures keep track of their binding**.
+```ruby
+def call_me(some_code)
+  some_code.call
+end
+
+name = "Robert"
+chunk_of_code = Proc.new {puts "hi #{name}"}
+name = "Griffin III"        # re-assign name after Proc initialization
+
+call_me(chunk_of_code) # => hi Griffin III
+```
+Binding includes all artifacts of code (methods, variables, constants etc), but they have to have already been created when the closure is made (unless they're passed in as arguments). So this doesn't work:
+```ruby
+def call_me(some_code)
+  some_code.call
+end
+
+chunk_of_code = Proc.new {puts "hi #{name}"}
+name = "Griffin III"        # re-assign name after Proc initialization
+
+call_me(chunk_of_code) # => NameError
+```
+### [Symbol to proc](https://launchschool.com/lessons/c0400a9c/assignments/26d715d8)
+This:
+```ruby
+[1, 2, 3, 4, 5].map do |num|
+  num.to_s
+end
+
+# => ["1", "2", "3", "4", "5"]
+```
+can be written like this:
+```ruby
+[1, 2, 3, 4, 5].map(&:to_s)                     # => ["1", "2", "3", "4", "5"]
+```
+This doesn't work for methods which take arguments.
+
+It can substitute blocks:
+```ruby
+["hello", "world"].each(&:upcase!)              # => ["HELLO", "WORLD"]
+[1, 2, 3, 4, 5].select(&:odd?)                  # => [1, 3, 5]
+[1, 2, 3, 4, 5].select(&:odd?).any?(&:even?)    # => false
+```
+What is happening behind the scenes is:
+
+```ruby
+(&:to_s)
+```
+is becoming
+```ruby
+{ |n| n.to_s }
+```
+The `&` operator tells Ruby to call `#to_proc` on the symbol and then convert that proc to a block.
+
+### [Lesson 1 Summary](https://launchschool.com/lessons/c0400a9c/assignments/b4fb9b1c)
+
+- Ruby implements closures through blocks, procs and lambdas.
+- Closures drag their binding around with them. This is central to how variables are scoped.
+- Blocks can defer decisions to when the method is called.
+- Blocks are great for 'before and after' logic.
+- We can use `yield` to include blocks in our methods.
+- With `yield` we can pass arguments to the block.
+- Blocks have return values which we have to be aware of.
+- Blocks can be used to re-write Ruby methods in our own classes.
+- `symbol#to_proc` is a nice shortcut.
+- We can return closures from methods/blocks.
+
+- 
