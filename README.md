@@ -6,6 +6,7 @@
 - [Extra resources](#extra-resources)
 ## Study Guide
 - [Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
+- [Introduction to testing](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md)
   - Closures
   - Variable Scope and Binding
   - What are blocks?
