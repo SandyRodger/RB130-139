@@ -20,6 +20,7 @@
 - [Blocks and Variable Scope](#blocks-and-variable-scope)
 - [Symbol to proc](#symbol-to-proc)
 - [Lesson 1 Summary](#lesson-1-summary)
+- [Quiz](#quiz)
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
@@ -588,4 +589,32 @@ The `&` operator tells Ruby to call `#to_proc` on the symbol and then convert th
 - `symbol#to_proc` is a nice shortcut.
 - We can return closures from methods/blocks.
 
-- 
+### [Quiz](https://launchschool.com/quizzes/6b2ec033)
+
+           | 1st attempt | 2nd attempt | 3rd attempt
+----------------------------------------------------
+1.        |       1     |      1      |
+2.        |       1     |      1      |
+3.        |       0     |      1      |
+4.        |       1     |      1      |
+5.        |       0     |      1      |
+6.        |       1     |      1      |
+7.        |       0     |      1      |
+8.        |       0     |      1      |
+9.        |       1     |      1      |
+10.       |       1     |      1      |
+11.       |       1     |      1      |
+12.       |       0     |      1      |
+13.       |       1     |      0      |
+14.       |       1     |      1      |
+15.       |       0     |      1      |
+----------------------------------------------------
+total:    |      60%    |      94%    |
+
+Question 13 mistake:
+
+```ruby
+"the cat in the hat".split.map(&:capitalize).join(' ') # => "The Cat In The Hat"
+```
+This code causes `Symbol#to_proc` to be called, but not `Block#to_proc`
+                  
