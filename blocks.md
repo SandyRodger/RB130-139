@@ -15,6 +15,9 @@
 - [Walk-through: Build a 'times' method](#walk-through-build-a-times-method)
 - [Walk-through: Build an each method](#walk-through-build-an-each-method)
 - [Assignment: Build a 'select' method](#assignment-build-a-select-method)
+- [Assignment build a reduce method](#assignment-build-a-reduce-method)
+- [Assignment: TodoList](#assignment-todolist)
+- [Blocks and Variable Scope](#blocks-and-variable-scope)
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
@@ -429,3 +432,49 @@ p select(array) { |num| num.odd? }      # => [1, 3, 5]
 p select(array) { |num| puts num }      # => [], because "puts num" returns nil and evaluates to false
 p select(array) { |num| num + 1 }       # => [1, 2, 3, 4, 5], because "num + 1" evaluates to true
 ```
+### [Assignment build a reduce method](https://launchschool.com/lessons/c0400a9c/assignments/c1edc867)
+
+
+```ruby
+array = [1, 2, 3, 4, 5]
+
+def reduce(arr, a=0)
+	output = a
+	arr.each do |n|
+		output = yield(output, n)
+	end
+	output
+end
+
+p reduce(array) { |acc, num| acc + num }                    # => 15
+p reduce(array, 10) { |acc, num| acc + num }                # => 25
+p reduce(array) { |acc, num| acc + num if num.odd? }        # => NoMethodError: undefined method `+' for nil:NilClass
+```
+A tricky example of `#reduce`:
+
+```ruby
+[1, 2, 3].reduce do |acc, num|
+  p "acc is #{acc}"
+  p "."
+  p "num is #{num}"
+end
+
+# "acc is 1"
+# "."
+# "num is 2"
+# "acc is num is 2"
+# "."
+# "num is 3"
+```
+What we're seeing is two iterations through the array. On the first iteration `acc` is 1 and `num` is 2. On the second iteration `acc` is "num is 2" and `num` is 3. Which is exactly what it prints.
+
+### [Assignment TodoList](https://launchschool.com/lessons/c0400a9c/assignments/b2926256)
+[my todo list](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/03_todo.rb)
+### [Assignment TodoList with each](https://launchschool.com/lessons/c0400a9c/assignments/490f885c)
+[my todo list with each](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/07_todo_each_2.rb)
+### [Assignment TodoList with select](https://launchschool.com/lessons/c0400a9c/assignments/b57d3600)
+[my todo list with select](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/06_todo_select_2.rb)
+### [Assignment TodoList more methods](https://launchschool.com/lessons/c0400a9c/assignments/f7185b37)
+[my todo list with more methods](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/08_more_todo_methods.rb)
+
+### [Blocks and Variable Scope](https://launchschool.com/lessons/c0400a9c/assignments/fd86ea2e)
