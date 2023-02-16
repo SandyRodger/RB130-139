@@ -13,6 +13,8 @@ Contents:
 - [SEAT](#seat)
 - [Testing Equality](#testing-equality)
 - [Equality with custom class](#equality-with-custom-class)
+- [Assignment: write a test suite for Todo List](#assignment-write-a-test-suite-for-todo-list)
+- [Code coverage](#code-coverage)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -309,3 +311,12 @@ class Car
   end
 end
 ```
+
+### [Assignment write a test suite for Todo List](https://launchschool.com/lessons/dd2ae827/assignments/cf0f8d58)
+[my test suite for todo list](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/02_lesson_2_introduction_to_testing/02_assertions/12_todolist_test.rb)
+
+Interesting point about squiggly heredocs.
+
+### [Code coverage](https://launchschool.com/lessons/dd2ae827/assignments/9f7c1f7c)
+
+How much of the program is actually tested by the test suite?
