@@ -7,8 +7,10 @@ Contents:
 - [Lecture: Minitest](#lecture-minitest)
 - [How to make a test](#how-to-make-a-test)
 - [Expectation syntax](#expectation-syntax)
-- [Summary](#summary)
+- [Minitest summary](#minitest-summary)
 - [Assertions](#assertions)
+- [Refutations](#refutations)
+- [SEAT](#seat)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -138,7 +140,7 @@ end
 ```
 This will output the same as assertion style. It is purely a stylistic choice. (Expectation-style mirrors RSpec's syntax). In this course we stick to assertion-style.
 
-### [Summary](https://launchschool.com/lessons/dd2ae827/assignments/3a8a5aa5)
+### [Minitest summary](https://launchschool.com/lessons/dd2ae827/assignments/3a8a5aa5)
 
 - Minitest is a library of tests that comes installed with Ruby.
 - Using Minitests is very easy and you can play around with it.
@@ -152,3 +154,70 @@ This will output the same as assertion style. It is purely a stylistic choice. (
 
 ### [Assertions](https://launchschool.com/lessons/dd2ae827/assignments/fe2ff54a)
 
+`assert_equal` is the do-it-all assertion, but learn the most common assertions and you should be good.
+
+[full list of assertions](http://docs.seattlerb.org/minitest/Minitest/Assertions.html)
+
+Commmon assertions:
+- `assert(test)` : fails unless `test` is truthy.
+```ruby
+def test_car_exists
+  car = Car.new
+  assert(car)
+end
+```
+- `asset_equal(exp, act)` : fails unless `exp == act`.
+```ruby
+def test_wheels
+  car = Car.new
+  assert_equal(4, car.wheels)
+end
+```
+
+- `assert_nil(obj)` : fails unless `obj` is `nil`.
+
+```ruby
+def test_name_is_nil
+  car = Car.new
+  assert_nil(car.name)
+end
+```
+
+- `assert_raises(*exp){...}` : fails unless block raises one of `*exp`.
+
+```ruby
+def test_raise_initialize_with_arg
+  assert_raises(ArgumentError) do
+    car = Car.new(name: "Joey")         # this code raises ArgumentError, so this assertion passes
+  end
+end
+```
+
+- `assert_instance_of(cls, obj)` : fails unless `obj` is and instance of `cls`.
+
+```ruby
+def test_instance_of_car
+  car = Car.new
+  assert_instance_of(Car, car)
+end
+```
+
+- `assert_includes(collection, obj)` : Fails unless `collection` includes `obj`.
+
+```ruby
+def test_includes_car
+  car = Car.new
+  arr = [1, 2, 3]
+  arr << car
+
+  assert_includes(arr, car)
+end
+```
+
+### [Refutations](https://launchschool.com/lessons/dd2ae827/assignments/fe2ff54a)
+
+These are the opposite of the assertions. Every `assert` has a corresponding `refute`. They're rarely used.
+
+### [SEAT](https://launchschool.com/lessons/dd2ae827/assignments/5c80633e)
+
+-
