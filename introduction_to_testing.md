@@ -15,6 +15,7 @@ Contents:
 - [Equality with custom class](#equality-with-custom-class)
 - [Assignment: write a test suite for Todo List](#assignment-write-a-test-suite-for-todo-list)
 - [Code coverage](#code-coverage)
+- [Exercises More topics](#exercises-more-topics)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -152,7 +153,7 @@ This will output the same as assertion style. It is purely a stylistic choice. (
 - Create a test class inheriting from `MiniTest::Test`
 - Create tests that start with `test_`
 - Create assertions with `assert_equal` comparing expected value and actual value.
-- Colorize Minitest with `minitest-reporters.
+- Colorize Minitest with `minitest-reporters`.
 - `skip` tests.
 - Assertion-style v. expectation style.
 
@@ -319,4 +320,26 @@ Interesting point about squiggly heredocs.
 
 ### [Code coverage](https://launchschool.com/lessons/dd2ae827/assignments/9f7c1f7c)
 
-How much of the program is actually tested by the test suite?
+- How much of the program is actually tested by the test suite?
+- Code coverage is one way of meansuring code quality.
+- THere are many tools for testing code coverage. We will use `simplecov`.
+
+```ruby
+gem install simplecov
+```
+then this at the top of your test file:
+```ruby
+require 'simplecov'
+SimpleCov.start
+```
+and next time you run your tests you will see an html file has been created, which when opened shows you how much of your code is covered by tests.
+
+### [Exercises More topics](https://launchschool.com/lessons/dd2ae827/assignments/f4633861)
+
+- [Easy 1](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/01_easy_1)
+- [Easy 2](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/02_easy_2)
+- [Easy testing](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/03_easy_testing)
+- [Medium 1](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/04_medium_1)
+- [Medium 2 testing](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/05_medium_2_testing)
+
+blah
