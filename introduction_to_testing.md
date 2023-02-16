@@ -11,6 +11,8 @@ Contents:
 - [Assertions](#assertions)
 - [Refutations](#refutations)
 - [SEAT](#seat)
+- [Testing Equality](#testing-equality)
+- [Equality with custom class](#equality-with-custom-class)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -220,4 +222,74 @@ These are the opposite of the assertions. Every `assert` has a corresponding `re
 
 ### [SEAT](https://launchschool.com/lessons/dd2ae827/assignments/5c80633e)
 
--
+- Set up the objects to be tested.
+- Execute the code with the test objects.
+- Assert that the code ran correctly.
+- Tear-down and clean up remaining artifacts.
+
+`setup` instance method:
+```ruby
+require 'minitest/autorun'
+
+require_relative 'car'
+
+class CarTest < MiniTest::Test
+  def setup
+    @car = Car.new
+  end
+
+  def test_car_exists
+    assert(@car)
+  end
+
+  def test_wheels
+    assert_equal(4, @car.wheels)
+  end
+
+  def test_name_is_nil
+    assert_nil(@car.name)
+  end
+
+  def test_raise_initialize_with_arg
+    assert_raises(ArgumentError) do
+      Car.new(name: "Joey")      # we can't use the ivar from setup here because the Car object takes arguments.
+    end
+  end
+
+  def test_instance_of_car
+    assert_instance_of(Car, @car)
+  end
+
+  def test_includes_car
+    arr = [1, 2, 3]
+    arr << @car
+
+    assert_includes(arr, @car)
+  end
+end
+```
+You may be able to get away with only EA of SEAT.
+
+## [Testing Equality](https://launchschool.com/lessons/dd2ae827/assignments/bcce2222)
+
+What are we saying is equal?
+
+`assert_equal` tests for *value equality* with `==`.
+
+`assert_same` tests for *object equality*
+
+```ruby
+require 'minitest/autorun'
+
+class EqualityTest < Minitest::Test
+  def test_value_equality
+    str1 = "hi there"
+    str2 = "hi there"
+
+    assert_equal(str1, str2)    # => passes
+    assert_same(str1, str2)     # => fails
+  end
+end
+```
+
+### [Equality with custom class](https://launchschool.com/lessons/dd2ae827/assignments/bcce2222)
