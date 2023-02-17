@@ -16,6 +16,7 @@ Contents:
 - [Assignment: write a test suite for Todo List](#assignment-write-a-test-suite-for-todo-list)
 - [Code coverage](#code-coverage)
 - [Exercises More topics](#exercises-more-topics)
+- [proc to block operator](#proc-to-block-operator)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -342,4 +343,52 @@ and next time you run your tests you will see an html file has been created, whi
 - [Medium 1](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/04_medium_1)
 - [Medium 2 testing](https://github.com/SandyRodger/RB130-139/tree/main/02_exercises/05_medium_2_testing)
 
-blah
+### [proc to block operator](https://launchschool.com/exercises/ecdb2b22)
+
+- is `&`
+- When used with a method argument Ruby tries to convert that object to a block:
+
+```ruby
+comparator = proc { |a, b| b <=> a }
+array.sort(&comparator)
+```
+
+- When the object is not a proc (can only be a symbol?), `&` attempts to call `#to_proc` on the object first.
+- **Symbol to Proc operation**: Used with symbols representing methods (`&:to_i`) Ruby creates a proc that calls that method (here `to_i`) on a passed object and then converts that proc to a block. (A more accutrate name would be 'symbol to proc to block operator')
+- Remember that the above describes `&` applied to an argument object. This is different to how it is applied to a method parameter:
+```ruby
+def foo(&block)
+  block.call
+end
+```
+  ... here it has the reverse effect, converting the method parameter to a proc object.
+  
+```ruby
+ # 1
+def convert_block_to_proc(&arg_1)
+  arg_1.call(1)     # arg_1 has been turned into a proc.
+end
+
+convert_block_to_proc{|a| puts a}
+
+# => 1
+
+# 2
+my_proc = proc { |a| "this is #{a}" }
+
+def convert_proc_to_block
+	[1, 2, 3].each{|n| puts yield(n)}
+end
+
+convert_proc_to_block(&my_proc) # Without the & this raises an Argument Error, because & converts a proc into a block and we can't yield to a proc
+
+# => this is 1
+# => this is 2
+# => this is 3
+
+convert_proc_to_block(&:to_s)   # This is calling Method#to_proc
+
+# => 1
+# => 2
+# => 3
+```
