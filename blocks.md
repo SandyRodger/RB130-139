@@ -11,7 +11,16 @@
 - [Flags](#flags)
 - [Methods with an explicit block parameter](#methods-with-an-explicit-block-parameter)
 - [Using Closures](#using-closures)
-- [Summary](#summary)
+- [Writing methods which take blocks - Summary](#summary)
+- [Walk-through: Build a 'times' method](#walk-through-build-a-times-method)
+- [Walk-through: Build an each method](#walk-through-build-an-each-method)
+- [Assignment: Build a 'select' method](#assignment-build-a-select-method)
+- [Assignment build a reduce method](#assignment-build-a-reduce-method)
+- [Assignment: TodoList](#assignment-todolist)
+- [Blocks and Variable Scope](#blocks-and-variable-scope)
+- [Symbol to proc](#symbol-to-proc)
+- [Lesson 1 Summary](#lesson-1-summary)
+- [Quiz](#quiz)
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
@@ -361,3 +370,251 @@ Note that each `sequence` call has its own copy of `counter`.
 - Blocks allow the method writer to defer implementation to the method caller.
 - Blocks are good for 'sandwich code'.
 - Methods and blocks can return procs/lambdas.
+
+### [Walk-through Build a times method](https://launchschool.com/lessons/c0400a9c/assignments/cd792c69)
+```ruby
+# method implementation
+def times(number)
+  counter = 0
+  while counter < number do
+    yield(counter)
+    counter += 1
+  end
+
+  number                      # return the original method argument to match behavior of `Integer#times`
+end
+
+# method invocation
+times(5) do |num|
+  puts num
+end
+
+# Output:
+# 0
+# 1
+# 2
+# 3
+# 4
+# => 5
+```
+### [Walk-through Build an each method](https://launchschool.com/lessons/c0400a9c/assignments/c7af0c78)
+```ruby
+def each(array)
+  counter = 0
+
+  while counter < array.size
+    yield(array[counter])                           # yield to the block, passing in the current element to the block
+    counter += 1
+  end
+
+  array                                             # returns the `array` parameter, similar in spirit to how `Array#each` returns the caller
+end
+
+each([1, 2, 3, 4, 5]) do |num|
+  puts num
+end
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# => [1, 2, 3, 4, 5]
+```
+### [Assignment build a select method](https://launchschool.com/lessons/c0400a9c/assignments/5bc68af0)
+```ruby
+array = [1, 2, 3, 4, 5]
+
+def select(arr)
+	arr.each_with_object([]) do |n, output| 
+		output.push(n) if yield(n)
+	end
+end
+
+p select(array) { |num| num.odd? }      # => [1, 3, 5]
+p select(array) { |num| puts num }      # => [], because "puts num" returns nil and evaluates to false
+p select(array) { |num| num + 1 }       # => [1, 2, 3, 4, 5], because "num + 1" evaluates to true
+```
+### [Assignment build a reduce method](https://launchschool.com/lessons/c0400a9c/assignments/c1edc867)
+
+
+```ruby
+array = [1, 2, 3, 4, 5]
+
+def reduce(arr, a=0)
+	output = a
+	arr.each do |n|
+		output = yield(output, n)
+	end
+	output
+end
+
+p reduce(array) { |acc, num| acc + num }                    # => 15
+p reduce(array, 10) { |acc, num| acc + num }                # => 25
+p reduce(array) { |acc, num| acc + num if num.odd? }        # => NoMethodError: undefined method `+' for nil:NilClass
+```
+A tricky example of `#reduce`:
+
+```ruby
+[1, 2, 3].reduce do |acc, num|
+  p "acc is #{acc}"
+  p "."
+  p "num is #{num}"
+end
+
+# "acc is 1"
+# "."
+# "num is 2"
+# "acc is num is 2"
+# "."
+# "num is 3"
+```
+What we're seeing is two iterations through the array. On the first iteration `acc` is 1 and `num` is 2. On the second iteration `acc` is "num is 2" and `num` is 3. Which is exactly what it prints.
+
+### [Assignment TodoList](https://launchschool.com/lessons/c0400a9c/assignments/b2926256)
+[my todo list](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/03_todo.rb)
+### [Assignment TodoList with each](https://launchschool.com/lessons/c0400a9c/assignments/490f885c)
+[my todo list with each](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/07_todo_each_2.rb)
+### [Assignment TodoList with select](https://launchschool.com/lessons/c0400a9c/assignments/b57d3600)
+[my todo list with select](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/06_todo_select_2.rb)
+### [Assignment TodoList more methods](https://launchschool.com/lessons/c0400a9c/assignments/f7185b37)
+[my todo list with more methods](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/08_more_todo_methods.rb)
+
+### [Blocks and Variable Scope](https://launchschool.com/lessons/c0400a9c/assignments/fd86ea2e)
+
+Remember that with blocks you can see out, but not in:
+```ruby
+level_1 = "outer-most variable"
+
+[1, 2, 3].each do |n|                     # block creates a new scope
+  level_2 = "inner variable"
+
+  ['a', 'b', 'c'].each do |n2|            # nested block creates a nested scope
+    level_3 = "inner-most variable"
+
+    # all three level_X variables are accessible here
+  end
+
+  # level_1 is accessible here
+  # level_2 is accessible here
+  # level_3 is not accessible here
+
+end
+
+# level_1 is accessible here
+# level_2 is not accessible here
+# level_3 is not accessible here
+```
+(This can be confusing because method invocation without parentheses looks like local variable referencing.)
+
+### [Closure and binding](https://launchschool.com/lessons/c0400a9c/assignments/fd86ea2e)
+
+Closures keep a memory of artifacts in their scope. In the example below this supercedes method scoping rules and allows the `name` local variable to be available within the method without being passed in.
+
+```ruby
+def call_me(some_code)
+  some_code.call    # call will execute the "chunk of code" that gets passed in
+end
+
+name = "Robert"
+chunk_of_code = Proc.new {puts "hi #{name}"}
+
+call_me(chunk_of_code) # => hi Robert
+```
+Even reassigning `name` after the proc is created is accurately reflected in the proc call. **Closures keep track of their binding**.
+```ruby
+def call_me(some_code)
+  some_code.call
+end
+
+name = "Robert"
+chunk_of_code = Proc.new {puts "hi #{name}"}
+name = "Griffin III"        # re-assign name after Proc initialization
+
+call_me(chunk_of_code) # => hi Griffin III
+```
+Binding includes all artifacts of code (methods, variables, constants etc), but they have to have already been created when the closure is made (unless they're passed in as arguments). So this doesn't work:
+```ruby
+def call_me(some_code)
+  some_code.call
+end
+
+chunk_of_code = Proc.new {puts "hi #{name}"}
+name = "Griffin III"        # re-assign name after Proc initialization
+
+call_me(chunk_of_code) # => NameError
+```
+### [Symbol to proc](https://launchschool.com/lessons/c0400a9c/assignments/26d715d8)
+This:
+```ruby
+[1, 2, 3, 4, 5].map do |num|
+  num.to_s
+end
+
+# => ["1", "2", "3", "4", "5"]
+```
+can be written like this:
+```ruby
+[1, 2, 3, 4, 5].map(&:to_s)                     # => ["1", "2", "3", "4", "5"]
+```
+This doesn't work for methods which take arguments.
+
+It can substitute blocks:
+```ruby
+["hello", "world"].each(&:upcase!)              # => ["HELLO", "WORLD"]
+[1, 2, 3, 4, 5].select(&:odd?)                  # => [1, 3, 5]
+[1, 2, 3, 4, 5].select(&:odd?).any?(&:even?)    # => false
+```
+What is happening behind the scenes is:
+
+```ruby
+(&:to_s)
+```
+is becoming
+```ruby
+{ |n| n.to_s }
+```
+The `&` operator tells Ruby to call `#to_proc` on the symbol and then convert that proc to a block.
+
+### [Lesson 1 Summary](https://launchschool.com/lessons/c0400a9c/assignments/b4fb9b1c)
+
+- Ruby implements closures through blocks, procs and lambdas.
+- Closures drag their binding around with them. This is central to how variables are scoped.
+- Blocks can defer decisions to when the method is called.
+- Blocks are great for 'before and after' logic.
+- We can use `yield` to include blocks in our methods.
+- With `yield` we can pass arguments to the block.
+- Blocks have return values which we have to be aware of.
+- Blocks can be used to re-write Ruby methods in our own classes.
+- `symbol#to_proc` is a nice shortcut.
+- We can return closures from methods/blocks.
+
+### [Quiz](https://launchschool.com/quizzes/6b2ec033)
+
+           | 1st attempt | 2nd attempt | 3rd attempt
+----------------------------------------------------
+1.        |       1     |      1      |
+2.        |       1     |      1      |
+3.        |       0     |      1      |
+4.        |       1     |      1      |
+5.        |       0     |      1      |
+6.        |       1     |      1      |
+7.        |       0     |      1      |
+8.        |       0     |      1      |
+9.        |       1     |      1      |
+10.       |       1     |      1      |
+11.       |       1     |      1      |
+12.       |       0     |      1      |
+13.       |       1     |      0      |
+14.       |       1     |      1      |
+15.       |       0     |      1      |
+----------------------------------------------------
+total:    |      60%    |      94%    |
+
+Question 13 mistake:
+
+```ruby
+"the cat in the hat".split.map(&:capitalize).join(' ') # => "The Cat In The Hat"
+```
+This code causes `Symbol#to_proc` to be called, but not `Block#to_proc`
+                  

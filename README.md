@@ -4,8 +4,10 @@
 - [Coursework](#coursework)
 - [Exercises](#exercises)
 - [Extra resources](#extra-resources)
+
 ## Study Guide
-- [Blocks](https://github.com/SandyRodger/RB130-139/blob/main/Blocks)
+- [Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
+- [Introduction to testing](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md)
   - Closures
   - Variable Scope and Binding
   - What are blocks?
@@ -125,3 +127,4 @@
 - Ruby Methods with Regex
 ## Extra Resources
 - [Ginni's notes](https://github.com/gcpinckert/rb130_139)
+- [Github formatting help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
