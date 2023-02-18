@@ -19,6 +19,7 @@ Contents:
 - [proc to block operator](#proc-to-block-operator)
 - [capturing input/output](#capturing-input-and-output)
 - [blocks, procs and lambdas](#blocks-procs-and-lambdas)
+- [Quiz](#quiz)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -35,7 +36,7 @@ gem install minitest # => installs Minitest
 
 gem list minitest # => lists which version of Minitest you have installed
 
-$ gem install minitest-reporters. # => This is not necessary, but adds colour to make the outpout more readable.
+$ gem install minitest-reporters. # => This is not necessary, but adds colour to make the output more readable.
 
 # then create a file in which to write your tests
 
@@ -130,7 +131,7 @@ Finished in 0.001167s, 856.8980 runs/s, 856.8980 assertions/s.
 ```
 ### [Expectation syntax](https://launchschool.com/lessons/dd2ae827/assignments/3a8a5aa5)
 
-The first part of this page is about *assertion* (*asset-style*) syntax. You can also use *expectation* (*spec-style*) syntax. In expectation style we group tests into `describe` blocks and tests are written with the `it` method. Instead of assertions, we use *expectation matchers*.
+The first part of this page is about *assertion* (*assert-style*) syntax. You can also use *expectation* (*spec-style*) syntax. In expectation style we group tests into `describe` blocks and tests are written with the `it` method. Instead of assertions, we use *expectation matchers*.
 
 Here is a file of tests:
 
@@ -201,7 +202,7 @@ def test_raise_initialize_with_arg
 end
 ```
 
-- `assert_instance_of(cls, obj)` : fails unless `obj` is and instance of `cls`.
+- `assert_instance_of(cls, obj)` : fails unless `obj` is an instance of `cls`.
 
 ```ruby
 def test_instance_of_car
@@ -326,8 +327,8 @@ Interesting point about squiggly heredocs.
 ### [Code coverage](https://launchschool.com/lessons/dd2ae827/assignments/9f7c1f7c)
 
 - How much of the program is actually tested by the test suite?
-- Code coverage is one way of meansuring code quality.
-- THere are many tools for testing code coverage. We will use `simplecov`.
+- Code coverage is one way of measuring code quality.
+- There are many tools for testing code coverage. We will use `simplecov`.
 
 ```ruby
 gem install simplecov
@@ -405,3 +406,6 @@ Something about `String:IO`. **I have to come back to this with more brain power
 
 ### [blocks, procs and lambdas](https://launchschool.com/exercises/753d0323)
 
+### [Quiz](https://launchschool.com/quizzes/ada3ff36)
+
+1st attempt: 73%
