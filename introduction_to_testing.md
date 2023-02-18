@@ -17,6 +17,8 @@ Contents:
 - [Code coverage](#code-coverage)
 - [Exercises More topics](#exercises-more-topics)
 - [proc to block operator](#proc-to-block-operator)
+- [stdin](#stdin)
+- [blocks, procs and lambdas](#blocks-procs-and-lambdas)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
@@ -392,3 +394,8 @@ convert_proc_to_block(&:to_s)   # This is calling Method#to_proc
 # => 2
 # => 3
 ```
+### [stdin](https://launchschool.com/exercises/64799839)
+
+- The standard input stream
+
+### [blocks, procs and lambdas](https://launchschool.com/exercises/753d0323)
