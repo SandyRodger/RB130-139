@@ -17,7 +17,7 @@ Contents:
 - [Code coverage](#code-coverage)
 - [Exercises More topics](#exercises-more-topics)
 - [proc to block operator](#proc-to-block-operator)
-- [stdin](#stdin)
+- [capturing input/output](#capturing-input-and-output)
 - [blocks, procs and lambdas](#blocks-procs-and-lambdas)
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
@@ -276,6 +276,8 @@ end
 ```
 You may be able to get away with only EA of SEAT.
 
+[Here is an exercise about using Setup and Teardown to analyse a text file](https://launchschool.com/exercises/82427de8) which I need to review.
+
 ## [Testing Equality](https://launchschool.com/lessons/dd2ae827/assignments/bcce2222)
 
 What are we saying is equal?
@@ -394,8 +396,12 @@ convert_proc_to_block(&:to_s)   # This is calling Method#to_proc
 # => 2
 # => 3
 ```
-### [stdin](https://launchschool.com/exercises/64799839)
+### [Capturing input and output](https://launchschool.com/exercises/64799839)
 
-- The standard input stream
+- [Exercise about capturing input](https://launchschool.com/exercises/64799839)
+- [Exercise about capturing output](https://launchschool.com/exercises/e2b66911)
+
+Something about `String:IO`. **I have to come back to this with more brain power**.
 
 ### [blocks, procs and lambdas](https://launchschool.com/exercises/753d0323)
+
