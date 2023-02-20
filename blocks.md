@@ -24,7 +24,7 @@
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
-  A savable "chunk of code". It binds the artifacts around it (like copying and pasting a cell with its refrences in Microsoft Excel) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remains in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects is called its **binding**. 
+  A savable "chunk of code". It binds the artifacts around it (like in Microsoft Excel, copying and pasting a cell with its references ) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remain in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects are called its **binding**. 
 
 In Ruby a closure is handled with a Proc, Block or Lambda. Proc is a [class](https://docs.ruby-lang.org/en/2.6.0/Proc.html) which can instantiate proc objects, the other two are not.
 
@@ -80,9 +80,10 @@ The code in the block is not the method implementation. It is passed into the me
 
 ### [Writing methods that take blocks](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
-Every Ruby method already takes a block.
+In Ruby every method can take an optional block as an implicit argument.
+
 ```ruby
-puts("boy"){puts "girl"} # => "boy"
+puts("boy"){puts "girl"} # => "boy" : It took the block, but didn't run it, because it was not yielded to.
 ```
 
 ```ruby
@@ -92,7 +93,6 @@ end
 
 hello { puts 'hi' } # => hello!
 ```
-This shows that in Ruby every method can take an optional block as an implicit argument.
 
 ### [Yielding](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
@@ -168,7 +168,7 @@ end
 
 ### [Arity](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
-Arity is the rules of how many arguments you must pass to a block/proc/lambda.
+Arity is the rule of how many arguments you must pass to a block/proc/lambda.
 
 ```ruby
 def test1
@@ -340,7 +340,7 @@ end
 
 p results # => [0, 1, 3, 6, 10, 15]
 ```
-The block is invoked within the `for_each_in` method and shouldn't have access to the `results` array, but it does through closure.
+The block is invoked within the `for_each_in` method and shouldn't normally have access to the `results` array, but it does through closure.
 
 When methods return Procs we can do cool things :
 ```ruby
