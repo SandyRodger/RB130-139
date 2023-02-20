@@ -4,58 +4,51 @@
 - [Coursework](#coursework)
 - [Exercises](#exercises)
 - [Extra resources](#extra-resources)
+- [Chats with Olly](#chats-with-olly)
 
 ## Study Guide
-- [Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
-- [Introduction to testing](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md)
-  - Closures
-  - Variable Scope and Binding
-  - What are blocks?
-  - Writing methods that take blocks
-    - Passing Execution to a Block
-    - Yielding with an Argument
-    - Return Value of a Block
-  - Use Cases for Blocks
-    - Deferring Implementation
-    - Sandwich Code
-  - Explicit Block Parameters
-  - Symbol to Proc
-  - Arity
-  - Blocks vs Procs vs Lambdas
-- Testing Terms
-  - Assertion
-  - Code Coverage
-  - DSL (Domain Specific Language)
-  - Equivalence
-  - Minitest
-  - Refutations
-  - Regression
-  - SEAT Approach
-  - simplecov
-  - Skip
-  - Test
-  - Test Suite
-  - Unit Testing
-- Core Ruby Tools
-  - Overview
-  - Installing Ruby
-  - Ruby Version Managers
-  - Gems
-    - What are Gems?
-    - Working with Gems
-  - Bundler
-    - Gemfile and Gemfile.lock
-    - Using Bundler
-    - bundle exec
-  - Rake
-- Packaging Code Into a Project
-  - Project Directory
-  - Gemfile Setup
-  - Adding More
-  - Rakefile Setup
-  - gemspec
-- Regex Cheat Sheet
-- Open Ended Practice Questions
+- [Lesson 1: Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
+  - [Closures](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#closures)
+  - [Calling methods with blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#calling-methods-with-blocks)
+  - [Writing methods that take blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#writing-methods-that-take-blocks)
+  - [Yielding](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#yielding)
+  - [Yiedling with an argument](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#yiedling-with-an-argument)
+  - [Arity](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#arity)
+  - [Return value of yielding to a block](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#return-value-of-yielding-to-a-block)
+  - [When to use blocks in your own methods](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#when-to-use-blocks-in-your-own-methods)
+  - [Flags](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#flags)
+  - [Methods with an explicit block parameter](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#methods-with-an-explicit-block-parameter)
+  - [Using Closures](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#using-closures)
+  - [Writing methods which take blocks - Summary](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#summary)
+  - [Walk-through: Build a 'times' method](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#walk-through-build-a-times-method)
+  - [Walk-through: Build an each method](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#walk-through-build-an-each-method)
+  - [Assignment: Build a 'select' method](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#assignment-build-a-select-method)
+  - [Assignment build a reduce method](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#assignment-build-a-reduce-method)
+  - [Assignment: TodoList](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#assignment-todolist)
+  - [Blocks and Variable Scope](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#blocks-and-variable-scope)
+  - [Symbol to proc](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#symbol-to-proc)
+  - [Lesson 1 Summary](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#lesson-1-summary)
+  - [Quiz](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#quiz)
+- [Lesson 2: Introduction to testing](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md)
+  - [Introduction](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#introduction)
+  - [Setting up Minitest](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#setting-up-minitest)
+  - [Lecture: Minitest](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#lecture-minitest)
+  - [How to make a test](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#how-to-make-a-test)
+  - [Expectation syntax](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#expectation-syntax)
+  - [Minitest summary](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#minitest-summary)
+  - [Assertions](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#assertions)
+  - [Refutations](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#refutations)
+  - [SEAT](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#seat)
+  - [Testing Equality](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#testing-equality)
+  - [Equality with custom class](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#equality-with-custom-class)
+  - [Assignment: write a test suite for Todo List](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.mdhttps://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#assignment-write-a-test-suite-for-todo-list)
+  - [Code coverage](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#code-coverage)
+  - [Exercises More topics](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#exercises-more-topics)
+  - [proc to block operator](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#proc-to-block-operator)
+  - [capturing input/output](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#capturing-input-and-output)
+  - [blocks, procs and lambdas](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#blocks-procs-and-lambdas)
+  - [Quiz](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#quiz)
+
 ## Coursework
 ### Lesson 1: Blocks
 - [Select](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/01_select.rb)
@@ -112,19 +105,23 @@
 - [Passing Parameters Part 2](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/04_passing_params_pt_2.rb)
 - [Passing Parameters Part 3](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/05_passing_params_pt_3.rb)
 - [Method to Proc](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/06_method_to_proc.rb)
-- Bubble Sort with Blocks
+- [Bubble Sort with Blocks](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/07_bubble_sort_with_blocks.rb)
 ### Medium 2: Testing
-- Cash Register Class
-- Transaction Class
-- Cash Register Tests
-- Transaction Tests
-- Text Class
-- Text Tests
+- [Cash register test draft](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/02_cash_register_test_draft.rb)
+- [Test accept money method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/03_test_accept_money_method.rb)
+- [Test change method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/04_test_change_method.rb)
+- [Test give receipt](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/05_test_give_receipt.rb)
+- [Test prompt for payment](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/06_test_prompt_for_payment.rb)
+- [Alter prompt for payment method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/07_alter_prompt_for_payment_method.rb)
+- [Text swap method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/08_text_swap_method.rb)
+- [test word count](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/09_test_word_count.rb)
 ### Advanced 1
-- Internal vs External Iterators
-- Procs, Lambdas, and Blocks: Definition and Arity
+- [Internal vs External Iterators](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/01_internal_v_external_iterators.rb)
+- [Procs, Lambdas, and Blocks: Definition and Arity](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/02_procs_lambdas_and_blocks.rb)
 ### Regex Book
 - Ruby Methods with Regex
 ## Extra Resources
 - [Ginni's notes](https://github.com/gcpinckert/rb130_139)
 - [Github formatting help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
+## [Chats with Olly]()
+- [20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/olly_chat_20_02_23.md)
