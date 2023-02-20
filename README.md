@@ -1,12 +1,12 @@
-# RB130-139 Ruby Foundations: More Topics
-## Table of Contents
+# [RB130-139 Ruby Foundations: More Topics](https://launchschool.com/courses/64cd0b63/home)
+## Contents
 - [Study guide](#study-guide)
 - [Coursework](#coursework)
 - [Exercises](#exercises)
 - [Extra resources](#extra-resources)
 - [Chats with Olly](#chats-with-olly)
 
-## Study Guide
+## [Study Guide](https://launchschool.com/courses/64cd0b63/home)
 - [Lesson 1: Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
   - [Closures](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#closures)
   - [Calling methods with blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md#calling-methods-with-blocks)
@@ -49,8 +49,8 @@
   - [blocks, procs and lambdas](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#blocks-procs-and-lambdas)
   - [Quiz](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#quiz)
 
-## Coursework
-### Lesson 1: Blocks
+## [Coursework]([https://launchschool.com/exercises](https://launchschool.com/courses/64cd0b63/home))
+### [Lesson 1: Blocks](https://launchschool.com/lessons/c0400a9c/home)
 - [Select](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/01_select.rb)
 - [Reduce](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/02_reduce.rb)
 - [todo](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/03_todo.rb)
@@ -60,12 +60,12 @@
 - [todo each 2](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/07_todo_each_2.rb)
 - [more todo methods](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/08_more_todo_methods.rb)
 - [LS todo list](https://github.com/SandyRodger/RB130-139/blob/main/01_course_exercises/01_lesson_1_blocks/09_ls_todo_list.rb)
-### Lesson 2: Testing
+### [Lesson 2: Testing](https://launchschool.com/lessons/dd2ae827/home)
 - [MiniTest](https://github.com/SandyRodger/RB130-139/tree/main/01_course_exercises/02_lesson_2_introduction_to_testing/01_minitest)
 - [Assertions](https://github.com/SandyRodger/RB130-139/tree/main/01_course_exercises/02_lesson_2_introduction_to_testing/02_assertions)
 - [Code coverage](https://github.com/SandyRodger/RB130-139/tree/main/01_course_exercises/02_lesson_2_introduction_to_testing/03_code_coverage)
-## Exercises
-### Easy 1
+## [Exercises](https://launchschool.com/exercises)
+### [Easy 1](https://launchschool.com/exercise_sets/f55e7ba0)
 - [Enumerable class creation](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/01_easy_1/01_enumerable_class_creation.rb)
 - [Optional blocks](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/01_easy_1/02_optional_blocks.rb)
 - [Find missing numbers](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/01_easy_1/03_find_missing_numbers.rb)
@@ -76,7 +76,7 @@
 - [Iterators: true for none?](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/01_easy_1/08_true_for_none.rb)
 - [Iterators: true for one?](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/01_easy_1/09_true_for_one.rb)
 - [Count Items](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/01_easy_1/10_count_items.rb)
-### Easy 2
+### [Easy 2](https://launchschool.com/exercise_sets/3ea9ead7)
 - [From-To-Step Sequence Generator](01_from_to_step_sequence_generator.rb)
 - [Zipper](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/02_easy_2/02_zipper.rb)
 - [map](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/02_easy_2/03_map.rb)
@@ -87,7 +87,7 @@
 - [max_by](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/02_easy_2/08_max_by.rb)
 - [each_cons (Part 1)](09_each_cons_part_1.rb)
 - [each_cons (Part 2)](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/02_easy_2/10_each_cons_part_2.rb)
-### Easy Testing
+### [Easy Testing](https://launchschool.com/exercise_sets/94a0efb0)
 - [Boolean Assertions](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/03_easy_testing/01_boolean_assertions.rb)
 - [Equality Assertions](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/03_easy_testing/02_equality_assertions.rb)
 - [Nil Assertions](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/03_easy_testing/03_nil_assertions.rb)
@@ -98,7 +98,7 @@
 - [Kind Assertions](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/03_easy_testing/08_kind_assertions.rb)
 - [Same Object Assertions](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/03_easy_testing/09_same_object_assertions.rb)
 - [Refutations](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/03_easy_testing/10_refutations.rb)
-### Medium 1
+### [Medium 1](https://launchschool.com/exercise_sets/f3f8b728)
 - [Listening Device](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/01_listening_device.rb)
 - [Text Analyzer - Sandwich Code](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/02_text_analyzer_sandwich_code.rb)
 - [Passing Parameters Part 1](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/03_passing_params_pt_1.rb)
@@ -106,7 +106,7 @@
 - [Passing Parameters Part 3](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/05_passing_params_pt_3.rb)
 - [Method to Proc](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/06_method_to_proc.rb)
 - [Bubble Sort with Blocks](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/04_medium_1/07_bubble_sort_with_blocks.rb)
-### Medium 2: Testing
+### [Medium 2: Testing](https://launchschool.com/exercise_sets/c8bbfe96)
 - [Cash register test draft](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/02_cash_register_test_draft.rb)
 - [Test accept money method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/03_test_accept_money_method.rb)
 - [Test change method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/04_test_change_method.rb)
@@ -115,10 +115,10 @@
 - [Alter prompt for payment method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/07_alter_prompt_for_payment_method.rb)
 - [Text swap method](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/08_text_swap_method.rb)
 - [test word count](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/05_medium_2_testing/09_test_word_count.rb)
-### Advanced 1
+### [Advanced 1](https://launchschool.com/exercise_sets/10775edd)
 - [Internal vs External Iterators](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/01_internal_v_external_iterators.rb)
 - [Procs, Lambdas, and Blocks: Definition and Arity](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/02_procs_lambdas_and_blocks.rb)
-### Regex Book
+### [Regex Book](https://launchschool.com/books/regex)
 - Ruby Methods with Regex
 ## Extra Resources
 - [Ginni's notes](https://github.com/gcpinckert/rb130_139)
