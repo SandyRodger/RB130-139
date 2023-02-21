@@ -23,7 +23,7 @@ Contents:
 
 ### [Introduction](https://launchschool.com/lessons/dd2ae827/assignments/554f5ac5)
 
-Why do we write tests? To prevent regression. (This is the beginners answer, sufficient for now)
+Why do we write tests? To prevent regression. (This is the beginner's answer, sufficient for now)
 
 - Testing can become very complicated when considered in the context of work-flows, frameworks and different tools. So this is a simplified lesson on testing, which can be called 'unit-testing'.
 - The Ruby default testing library is 'Minitest', which this lesson will use.
@@ -42,7 +42,7 @@ $ gem install minitest-reporters. # => This is not necessary, but adds colour to
 
 # in temp.rb
 require 'minitest/autorun'
-require "minitest/reporters"
+require 'minitest/reporters'
 Minitest::Reporters.use!
 
 class MyFirstTest < Minitest::Test
@@ -102,7 +102,7 @@ require 'minitest/autorun'
 require_relative 'monster'
 
 class MonsterTest < Minitest::Test   # The test class must subclass Minitest::Test, to inherit the methods needed.
-	def test_teeth                     # The tests are written as methods beginnning with 'test_' (by convention)
+	def test_teeth                     # The tests are written as methods beginnning with 'test_' (Ruby won't run them without this)
 		monster = Monster.new(200)       # We set up the objects to assert against.
 		assert_equal(200, monster.teeth) # Within each test we must include at least one assertion.
 	end
@@ -359,7 +359,7 @@ array.sort(&comparator)
 ```
 
 - When the object is not a proc (can only be a symbol?), `&` attempts to call `#to_proc` on the object first.
-- **Symbol to Proc operation**: Used with symbols representing methods (`&:to_i`) Ruby creates a proc that calls that method (here `to_i`) on a passed object and then converts that proc to a block. (A more accutrate name would be 'symbol to proc to block operator')
+- **Symbol to Proc operation**: Used with symbols representing methods (`&:to_i`) Ruby creates a proc that calls that method (here `to_i`) on a passed object and then converts that proc to a block. (A more accurate name would be 'symbol to proc to block operator')
 - Remember that the above describes `&` applied to an argument object. This is different to how it is applied to a method parameter:
 ```ruby
 def foo(&block)
@@ -408,4 +408,29 @@ Something about `String:IO`. **I have to come back to this with more brain power
 
 ### [Quiz](https://launchschool.com/quizzes/ada3ff36)
 
-1st attempt: 73%
+           | 1st attempt | 2nd attempt | 3rd attempt
+----------------------------------------------------
+1.        |       1     |             |
+2.        |       1     |             |
+3.        |       1     |             |
+4.        |       1     |             |
+5.        |       1     |             |
+6.        |       0     |             |
+7.        |       1     |             |
+8.        |       0     |             |
+9.        |       0     |             |
+10.       |       0     |             |
+11.       |       1     |             |
+12.       |       1     |             |
+13.       |       1     |             |
+14.       |       1     |             |
+15.       |       1     |             |
+----------------------------------------------------
+total:    |      73%    |            
+
+Errors:
+
+- Question 6: Actually the `setup` method is called before running each test and the `teardown` method is called after running each test.
+- Question 8: Test methods must be prepended with `test_` otherwise Ruby won't recognise them as tests.
+- Question 9: The arguments are incorrectly ordered. `assert_equal` takes `expt` then `act` so it ought to be `'Kitty'` and then `'@kitty.name'`
+- Question 10: For `assert_match` having the arguments in the wrong order will raise an exception. The two possible options are using `assert` to show that the variable `include`s the string or `assert_match` which takes `matcher`, then `obj` as arguments, so `assert_match(@kitty.miaow, / is miaowing\./)`
