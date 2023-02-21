@@ -4,7 +4,7 @@
 - [Coursework](#coursework)
 - [Exercises](#exercises)
 - [Extra resources](#extra-resources)
-- [Chats with Olly](#chats-with-olly)
+- [Coding with others](#coding-with-others)
 
 ## [Study Guide](https://launchschool.com/courses/64cd0b63/home)
 - [Lesson 1: Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
@@ -123,5 +123,5 @@
 ## Extra Resources
 - [Ginni's notes](https://github.com/gcpinckert/rb130_139)
 - [Github formatting help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
-## [Chats with Olly]()
-- [20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/olly_chat_20_02_23.md)
+## [Coding with others](https://github.com/SandyRodger/RB130-139/tree/main/04_coding_with_others)
+- [Olly - 20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/olly_chat_20_02_23.md)
