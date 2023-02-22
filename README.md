@@ -118,6 +118,8 @@
 ### [Advanced 1](https://launchschool.com/exercise_sets/10775edd)
 - [Internal vs External Iterators](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/01_internal_v_external_iterators.rb)
 - [Procs, Lambdas, and Blocks: Definition and Arity](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/02_procs_lambdas_and_blocks.rb)
+### [Challenges](https://launchschool.com/exercise_sets/46bce562)
+- [Triangles](https://github.com/SandyRodger/RB130-139/blob/main/03_challenges/02_triangle_tests.rb)
 ### [Regex Book](https://launchschool.com/books/regex)
 - Ruby Methods with Regex
 ## Extra Resources
