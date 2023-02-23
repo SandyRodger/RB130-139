@@ -4,7 +4,7 @@
 - [Coursework](#coursework)
 - [Exercises](#exercises)
 - [Extra resources](#extra-resources)
-- [Chats with Olly](#chats-with-olly)
+- [Coding with others](#coding-with-others)
 
 ## [Study Guide](https://launchschool.com/courses/64cd0b63/home)
 - [Lesson 1: Blocks](https://github.com/SandyRodger/RB130-139/blob/main/blocks.md)
@@ -118,10 +118,12 @@
 ### [Advanced 1](https://launchschool.com/exercise_sets/10775edd)
 - [Internal vs External Iterators](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/01_internal_v_external_iterators.rb)
 - [Procs, Lambdas, and Blocks: Definition and Arity](https://github.com/SandyRodger/RB130-139/blob/main/02_exercises/06_advanced_1/02_procs_lambdas_and_blocks.rb)
+### [Challenges](https://launchschool.com/exercise_sets/46bce562)
+- [Triangles](https://github.com/SandyRodger/RB130-139/blob/main/03_challenges/02_triangle_tests.rb)
 ### [Regex Book](https://launchschool.com/books/regex)
 - Ruby Methods with Regex
 ## Extra Resources
 - [Ginni's notes](https://github.com/gcpinckert/rb130_139)
 - [Github formatting help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
-## [Chats with Olly]()
-- [20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/olly_chat_20_02_23.md)
+## [Coding with others](https://github.com/SandyRodger/RB130-139/tree/main/04_coding_with_others)
+- [Olly - 20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/olly_chat_20_02_23.md)
