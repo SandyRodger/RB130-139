@@ -129,3 +129,4 @@
 - [Github formatting help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
 ## [Coding with others](https://github.com/SandyRodger/RB130-139/tree/main/04_coding_with_others)
 - [Olly - 20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/olly_chat_20_02_23.md)
+- [Spot - 24_02_23](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/spot_24_02_23.md)
