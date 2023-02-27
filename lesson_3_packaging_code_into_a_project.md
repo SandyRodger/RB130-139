@@ -6,6 +6,6 @@
    - Bundler
    - Rake
 
-[then read the Core Ruby Tools book](https://launchschool.com/books/core_ruby_tools)
+[then read the Core Ruby Tools book](https://github.com/SandyRodger/launch_school_books/blob/main/Ruby%20Core%20Tools.md)
 
 ### [Setting Up The Project Directory](https://launchschool.com/lessons/2fdb1ef0/assignments/1752fa44)
