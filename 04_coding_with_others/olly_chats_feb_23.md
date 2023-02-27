@@ -21,7 +21,7 @@
 
 - Ruby Toolbox book
   - Bundler
-  - Rake
+  - Rake ("Ruby + Make file = rake file")
   - Ruby Version Managers
 
 ### Questions:
@@ -31,4 +31,8 @@
 
 ### What we spoke about:
 
-- 
+- fiverr.com website builders (disc. about getting a side- job as a website builder.
+- caniuse.com ( for which browsers can use what - disc about bundlers and rake)
+- Olly's CSI assessment. Complicated problem about writing a function that takes a binary number and interprets it. Problem of leading zeroes.
+- $PATH - this is in CLI book, I must revisit it.
+- make tests for calorie counter for next time. LAos make it OOP.
