@@ -36,3 +36,7 @@
 - Olly's CSI assessment. Complicated problem about writing a function that takes a binary number and interprets it. Problem of leading zeroes.
 - $PATH - this is in CLI book, I must revisit it.
 - make tests for calorie counter for next time. LAos make it OOP.
+
+## Monday 5th March
+
+- How to test private methods?
