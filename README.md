@@ -48,8 +48,8 @@
   - [capturing input/output](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#capturing-input-and-output)
   - [blocks, procs and lambdas](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#blocks-procs-and-lambdas)
   - [Quiz](https://github.com/SandyRodger/RB130-139/blob/main/introduction_to_testing.md#quiz)
-- [Lesson 3: packaging code into a project](https://launchschool.com/lessons/2fdb1ef0/assignments)
-  - [The Ruby Toolbox](#the-ruby-toolbox)
+- [Lesson 3: packaging code into a project](https://github.com/SandyRodger/RB130-139/blob/main/lesson_3_packaging_code_into_a_project.md)
+  - [The Ruby Toolbox](https://github.com/SandyRodger/RB130-139/blob/main/lesson_3_packaging_code_into_a_project.md)
 
 ## [Coursework]([https://launchschool.com/exercises](https://launchschool.com/courses/64cd0b63/home))
 ### [Lesson 1: Blocks](https://launchschool.com/lessons/c0400a9c/home)
@@ -128,5 +128,5 @@
 - [Ginni's notes](https://github.com/gcpinckert/rb130_139)
 - [Github formatting help](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#styling-text)
 ## [Coding with others](https://github.com/SandyRodger/RB130-139/tree/main/04_coding_with_others)
-- [Olly - 20_02_23](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/olly_chat_20_02_23.md)
+- [Olly - February](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/olly_chats_feb_23.md)
 - [Spot - 24_02_23](https://github.com/SandyRodger/RB130-139/blob/main/04_coding_with_others/spot_24_02_23.md)
