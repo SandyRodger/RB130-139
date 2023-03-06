@@ -35,7 +35,7 @@
 - caniuse.com ( for which browsers can use what - disc about bundlers and rake)
 - Olly's CSI assessment. Complicated problem about writing a function that takes a binary number and interprets it. Problem of leading zeroes.
 - $PATH - this is in CLI book, I must revisit it.
-- make tests for calorie counter for next time. LAos make it OOP.
+- make tests for calorie counter for next time. Plus make it OOP.
 
 ## Monday 6th March
  ### Questions
@@ -44,6 +44,7 @@
  ### What I've been up to:
  
   - Calorie Counter
+    - Oopify
     - Add tests
     - Add rake
       - Rubocop
