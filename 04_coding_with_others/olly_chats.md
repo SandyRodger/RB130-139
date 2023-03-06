@@ -37,6 +37,24 @@
 - $PATH - this is in CLI book, I must revisit it.
 - make tests for calorie counter for next time. LAos make it OOP.
 
-## Monday 5th March
-
+## Monday 6th March
+ ### Questions
 - How to test private methods?
+
+ ### What I've been up to:
+ 
+  - Calorie Counter
+    - Add tests
+    - Add rake
+      - Rubocop
+      - tests
+      - gitpush
+      - create new files when necessary
+      - Add calories to overview
+      - Switch month
+    - Add overview
+    - Separate program from commands (executables?)
+    - Reorganise directory tree
+  - Finish RB130
+  - Re-read CLI book
+  - Read Regex book
