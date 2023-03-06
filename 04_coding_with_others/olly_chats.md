@@ -59,3 +59,10 @@
   - Finish RB130
   - Re-read CLI book
   - Read Regex book
+
+
+### What we talked about:
+
+ -  making ruby files executables with `chmod` shell command
+   -  `chmod +x calorie_program/today_cals.rb`
+   -  add `#! /usr/bin/env ruby` to line 1 of `calorie_tracker/today_cals.yml`
