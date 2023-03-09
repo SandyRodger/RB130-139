@@ -24,7 +24,8 @@
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
-  A savable "chunk of code". It binds the artifacts around it (like in Microsoft Excel, copying and pasting a cell with its references ) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remain in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects are called its **binding**. 
+ - [Ginni says...](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#closures)
+ -  A save-able "chunk of code". It binds the artifacts around it (like in Microsoft Excel, copying and pasting a cell with its references ) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remain in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects are called its **binding**. 
 
 In Ruby a closure is handled with a Proc, Block or Lambda. Proc is a [class](https://docs.ruby-lang.org/en/2.6.0/Proc.html) which can instantiate proc objects, the other two are not.
 
