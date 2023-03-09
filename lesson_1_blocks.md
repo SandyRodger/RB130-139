@@ -46,6 +46,15 @@ Here I define the `dinosaurs` method so that it returns a proc object. This proc
 In this example `i_yam` is not passed into the method and so should not be available, but it is available because the block has saved its reference as part of its binding.
 ### Example 3:
 
+<img width="1086" alt="Screenshot 2023-03-09 at 10 24 30" src="https://user-images.githubusercontent.com/78854926/223995627-c4ad31a8-7c6a-4fdf-9dc4-9225e11c5094.png">
+
+This example is almost identical to example 2, but returns an error message because in order for a variable to be saved in a closure it has to have already been initialized when the closure is created.
+
+### Example 4:
+
+<img width="739" alt="Screenshot 2023-03-09 at 10 27 35" src="https://user-images.githubusercontent.com/78854926/223996690-a61f319e-c0ac-4f5c-ad7d-6042b2ac3f13.png">
+
+However, if the closure has captured a local variable, it will keep track of any reassignment
 
 #### Ginni now reviews [variable scope and binding](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#variable-scope-and-binding)
 
@@ -60,6 +69,10 @@ In this example `i_yam` is not passed into the method and so should not be avail
 
 ### [Calling methods with blocks](https://launchschool.com/lessons/c0400a9c/assignments/ff802368)
 
+[Ginni says](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#writing-methods-that-take-blocks)
+
+ - All Ruby methods can take a block, but some ignore them, some use them for selection/ transformation etc.
+ - 
 Let's take apart this block:
 
 ```ruby
@@ -110,6 +123,10 @@ The code in the block is not the method implementation. It is passed into the me
 
 ### [Writing methods that take blocks](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
+[Ginni says](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#writing-methods-that-take-blocks)
+
+ - The `yield` keyword allows you or any future dev to "inject" a section of code and modify the method call. 
+  
 In Ruby every method can take an optional block as an implicit argument.
 
 ```ruby
