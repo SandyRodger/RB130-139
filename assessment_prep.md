@@ -7,26 +7,26 @@
 
 Lesson 1:
 
-|  | Once | Twice | Thrice |
-| :--- | :---: | :---: | :---: |
-|1. Introduction|       ✔     |            |    |
-|2. Closures in Ruby|       ✔     |            |    |
-|3.  Calling methods with blocks|       ✔     |            |    |
-|4.  Writing methods with blocks|       ✔     |            |    |
-|5.  Walk through: build a 'times' method|       ✔     |            |    |
-|6. Walk through: build an 'each' method |       ✔     |            |    |
-|7.  Walk through: build a 'select' method|       ✔     |            |    |
-|8.  Walk through: build a 'reduce' method |       ✔     |            |    |
-|9.  Assignment: TodoList |       ✔     |           |    |
-|10. Assignment: TodoList#each |       ✔     |            |    |
-|11. Assignment: TodoList#select |       ✔     |            |    |
-|12. Assignment: TodoList methods |       ✔     |            |    |
-|13.  Final Todolist code |       ✔     |            |    |
-| 14. Blocks and Variable scope|       ✔     |            |    |
-| 15.  Symbol to Proc |       ✔     |            |    |
-| 16.Summary |       ✔     |            |    |
-| 17.  Quiz |       ✔     |          |    |
-| + Read through Discussions |            |          |    |
+|  | Once | Twice | Thrice | How well do you know this? |
+| :--- | :---: | :---: | :---: | :--- |
+|1. Introduction|       ✔     |    ✔        |    | very well|
+|2. Closures in Ruby|       ✔     |     ✔       |    |very well|
+|3.  Calling methods with blocks|       ✔     |     ✔       |    |very well|
+|4.  Writing methods with blocks|       ✔     |      ✔      |    |very well|
+|5.  Walk through: build a 'times' method|       ✔     |   ✔      |    |very well|
+|6. Walk through: build an 'each' method |       ✔     |    ✔      |    |very well|
+|7.  Walk through: build a 'select' method|       ✔     |            |    |       |
+|8.  Walk through: build a 'reduce' method |       ✔     |            |    |       |
+|9.  Assignment: TodoList |       ✔     |           |    |       |
+|10. Assignment: TodoList#each |       ✔     |            |    |       |
+|11. Assignment: TodoList#select |       ✔     |            |    |       |
+|12. Assignment: TodoList methods |       ✔     |            |    |       |
+|13.  Final Todolist code |       ✔     |            |    |       |
+| 14. Blocks and Variable scope|       ✔     |            |    |       |
+| 15.  Symbol to Proc |       ✔     |            |    |       |
+| 16.Summary |       ✔     |            |    |       |
+| 17.  Quiz |       ✔     |          |    |       |
+| + Read through Discussions |            |          |    |       |
 
 
 
@@ -73,4 +73,12 @@ Extra:
 |2. Go through Ginni's notes and make your own notes|            |      X      | X   |
 |3. Write answers to Ginni's 'open ended questions'|            |      X      |  X  |
 
+Quesions:
 
+1.  Where exactly is the block created and its binding saved in this example:
+
+<img width="928" alt="Screenshot 2023-03-14 at 17 11 11" src="https://user-images.githubusercontent.com/78854926/225084398-73ad2689-2e79-4834-a0d3-c5fb2fb5a250.png">
+
+I think it must be when it's defined as an implicit argument ot the method. I mean it must be. It's just a little confusing how it exists sort of on the edge of the method, entering it, but looking back over its shoulder.
+
+2. What are Lambdas exactly?
