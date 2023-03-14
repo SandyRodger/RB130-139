@@ -24,12 +24,55 @@
 
 ### [Closures](https://launchschool.com/lessons/c0400a9c/assignments/0a7a9177)
 
-  A savable "chunk of code". It binds the artifacts around it (like in Microsoft Excel, copying and pasting a cell with its references ) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remain in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects are called its **binding**. 
+ - [Ginni says...](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#closures)
+ -  A save-able "chunk of code". It binds the artifacts around it (like in Microsoft Excel, copying and pasting a cell with its references ) and builds an "enclosure" around them. Whatever methods, variabes etc. are within scope at the moment of saving remain in scope when the closure is called at a later time. It is comparable to a method you've defined, which can be passed around. These references to its surrounding objects are called its **binding**. 
 
 In Ruby a closure is handled with a Proc, Block or Lambda. Proc is a [class](https://docs.ruby-lang.org/en/2.6.0/Proc.html) which can instantiate proc objects, the other two are not.
 
+#### More detail:
+ - Closures keep track of the objects in their binding
+ - A lambda is a sort of Proc.
+
+#### Example 1:
+
+<img width="967" alt="Screenshot 2023-03-09 at 09 41 11" src="https://user-images.githubusercontent.com/78854926/223982527-3916e07a-21f5-4fd5-82a7-830dd1c40354.png">
+
+Here I define the `dinosaurs` method so that it returns a proc object. This proc makes a closure containing local variables `idx` and `dinos`. The `dinosaurs` method is invoked on line 12 and saved to the local variable `dinos1`. Thus assigned we can call the proc with the `#call` method. This copy of the proc has its own unique 'idx' and 'dinos' variables, so we can create a second proc, saved to `dinos2`, and the `#call` method proves that the closures are seperate.
+
+#### Example 2:
+
+<img width="776" alt="Screenshot 2023-03-09 at 10 17 12" src="https://user-images.githubusercontent.com/78854926/223992584-ca25c668-7956-4849-b535-f62338f4303f.png">
+
+In this example `i_yam` is not passed into the method and so should not be available, but it is available because the block has saved its reference as part of its binding.
+### Example 3:
+
+<img width="1086" alt="Screenshot 2023-03-09 at 10 24 30" src="https://user-images.githubusercontent.com/78854926/223995627-c4ad31a8-7c6a-4fdf-9dc4-9225e11c5094.png">
+
+This example is almost identical to example 2, but returns an error message because in order for a variable to be saved in a closure it has to have already been initialized when the closure is created.
+
+### Example 4:
+
+<img width="739" alt="Screenshot 2023-03-09 at 10 27 35" src="https://user-images.githubusercontent.com/78854926/223996690-a61f319e-c0ac-4f5c-ad7d-6042b2ac3f13.png">
+
+However, if the closure has captured a local variable, it will keep track of any reassignment
+
+#### Ginni now reviews [variable scope and binding](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#variable-scope-and-binding)
+
+- A block creates a new scope for local variables. A local variable initialized in outer scope is available in inner scope, but not the other way around. (Remember the Japanese public toilet).
+- "Closures keep track of which local variables are in scope via a binding". 
+- Bindings keep track of:
+  - Method definitions
+  - Constants
+  - Local variables
+  - Anything it needs to function
+- "Basically, the closure will **bind** and drag around with it anything it needs to function correctly.
+
 ### [Calling methods with blocks](https://launchschool.com/lessons/c0400a9c/assignments/ff802368)
 
+[Ginni says](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#writing-methods-that-take-blocks)
+
+ - All Ruby methods can take a block, but some ignore them, some use them for selection/ transformation etc.
+ - 
 Let's take apart this block:
 
 ```ruby
@@ -80,6 +123,10 @@ The code in the block is not the method implementation. It is passed into the me
 
 ### [Writing methods that take blocks](https://launchschool.com/lessons/c0400a9c/assignments/5a060a20)
 
+[Ginni says](https://github.com/SandyRodger/rb130_139/blob/main/study_guide/blocks.md#writing-methods-that-take-blocks)
+
+ - The `yield` keyword allows you or any future dev to "inject" a section of code and modify the method call. 
+  
 In Ruby every method can take an optional block as an implicit argument.
 
 ```ruby
@@ -591,25 +638,24 @@ The `&` operator tells Ruby to call `#to_proc` on the symbol and then convert th
 
 ### [Quiz](https://launchschool.com/quizzes/6b2ec033)
 
-           | 1st attempt | 2nd attempt | 3rd attempt
-----------------------------------------------------
-1.        |       1     |      1      |
-2.        |       1     |      1      |
-3.        |       0     |      1      |
-4.        |       1     |      1      |
-5.        |       0     |      1      |
-6.        |       1     |      1      |
-7.        |       0     |      1      |
-8.        |       0     |      1      |
-9.        |       1     |      1      |
-10.       |       1     |      1      |
-11.       |       1     |      1      |
-12.       |       0     |      1      |
-13.       |       1     |      0      |
-14.       |       1     |      1      |
-15.       |       0     |      1      |
-----------------------------------------------------
-total:    |      60%    |      94%    |
+| Q | 1st attempt | 2nd Attempt | 3rd Attempt
+| :---: | :---: | :---: | :---: |
+|1. |       ✔     |      ✔      |
+|2. |       ✔     |      ✔      |
+|3.  |       X     |      ✔      |
+|4.  |       ✔     |      ✔      |
+|5.  |       X     |      ✔      |
+|6.  |       ✔     |      ✔      |
+|7.  |       X     |      ✔      |
+|8.   |       X     |      ✔      |
+|9.   |       ✔     |      ✔      |
+|10.  |       ✔     |      ✔      |
+|11.  |       ✔     |      ✔      |
+|12.  |       X     |      ✔      |
+|13.   |       ✔     |      X      |
+| 14. |       ✔     |      ✔      |
+| 15.   |       X     |      ✔      |
+| total: |      60%    |      94%    |
 
 Question 13 mistake:
 
