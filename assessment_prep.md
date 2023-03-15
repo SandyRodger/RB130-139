@@ -9,13 +9,13 @@ Lesson 1:
 
 |  | Once | Twice | Thrice | How well do you know this? |
 | :--- | :---: | :---: | :---: | :--- |
-|1. Introduction|       ✔     |    ✔        |    | very well|
-|2. Closures in Ruby|       ✔     |     ✔       |    |very well|
-|3.  Calling methods with blocks|       ✔     |     ✔       |    |very well|
-|4.  Writing methods with blocks|       ✔     |      ✔      |    |very well|
-|5.  Walk through: build a 'times' method|       ✔     |   ✔      |    |very well|
-|6. Walk through: build an 'each' method |       ✔     |    ✔      |    |very well|
-|7.  Walk through: build a 'select' method|       ✔     |            |    |       |
+|1. Introduction|       ✔     |    14th March        |    | very well|
+|2. Closures in Ruby|       ✔     |     14th March       |    |very well|
+|3.  Calling methods with blocks|       ✔     |     14th March       |    |very well|
+|4.  Writing methods with blocks|       ✔     |      14th March      |    |very well|
+|5.  Walk through: build a 'times' method|       ✔     |   14th March      |    |very well|
+|6. Walk through: build an 'each' method |       ✔     |    14th March      |    |very well|
+|7.  Walk through: build a 'select' method|       ✔     |     15th March       |    |       |
 |8.  Walk through: build a 'reduce' method |       ✔     |            |    |       |
 |9.  Assignment: TodoList |       ✔     |           |    |       |
 |10. Assignment: TodoList#each |       ✔     |            |    |       |
