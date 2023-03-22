@@ -16,7 +16,7 @@ Lesson 1:
 |5.  Walk through: build a 'times' method|       ✔     |   14th March      |    |very well|
 |6. Walk through: build an 'each' method |       ✔     |    14th March      |    |very well|
 |7.  Walk through: build a 'select' method|       ✔     |     15th March       |    |       |
-|8.  Walk through: build a 'reduce' method |       ✔     |            |    |       |
+|8.  Walk through: build a 'reduce' method |       ✔     |     20th March       |    |  very well     |
 |9.  Assignment: TodoList |       ✔     |           |    |       |
 |10. Assignment: TodoList#each |       ✔     |            |    |       |
 |11. Assignment: TodoList#select |       ✔     |            |    |       |
