@@ -90,4 +90,4 @@
 
 - When I'm going to take the assessment.
 - Olly's start-up idea for a networking simulator game
-- 
+- Git History and Git Lense extensions for rolling back git commits.
