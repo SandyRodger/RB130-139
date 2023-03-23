@@ -67,3 +67,27 @@
    -  `chmod +x calorie_program/today_cals.rb`
    -  add `#! /usr/bin/env ruby` to line 1 of `calorie_tracker/today_cals.yml`
    -  Then it has to be called in context of its directory. ie. `./go.rb`
+
+## Monday 13th March
+
+- Try to fix crashing computer
+
+## Monday 20th March
+
+### Questions
+ 
+- How do I recover my meals folder from Github
+- Why are my variables a different colour now?
+- walk me through this: `p array.reduce(10) { |x, acc| p acc - x}`
+
+### What I've been up to:
+
+- creating an assessment todo list
+- breaking my macbook
+- Rebuilding my macbook
+
+### What we talked about:
+
+- When I'm going to take the assessment.
+- Olly's start-up idea for a networking simulator game
+- 
