@@ -17,8 +17,8 @@ Lesson 1:
 |6. Walk through: build an 'each' method |✔|14th March ||very well
 |7.  Walk through: build a 'select' method|✔|14th March ||very well
 |8.  Walk through: build a 'reduce' method |✔|14th March ||very well
-|9.  Assignment: TodoList |✔
-|10. Assignment: TodoList#each |✔
+|9.  Assignment: TodoList |✔|23rd March||very well
+|10. Assignment: TodoList#each |✔|23rd March||very well
 |11. Assignment: TodoList#select |✔
 |12. Assignment: TodoList methods |✔
 |13.  Final Todolist code |✔
