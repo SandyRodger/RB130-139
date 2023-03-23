@@ -7,26 +7,26 @@
 
 Lesson 1:
 
-|  | Once | Twice | Thrice | How well do you know this? |
-| :--- | :---: | :---: | :---: | :--- |
-|1. Introduction|       ✔     |    14th March        |    | very well|
-|2. Closures in Ruby|       ✔     |     14th March       |    |very well|
-|3.  Calling methods with blocks|       ✔     |     14th March       |    |very well|
-|4.  Writing methods with blocks|       ✔     |      14th March      |    |very well|
-|5.  Walk through: build a 'times' method|       ✔     |   14th March      |    |very well|
-|6. Walk through: build an 'each' method |       ✔     |    14th March      |    |very well|
-|7.  Walk through: build a 'select' method|       ✔     |     15th March       |    |       |
-|8.  Walk through: build a 'reduce' method |       ✔     |     20th March       |    |  very well     |
-|9.  Assignment: TodoList |       ✔     |           |    |       |
-|10. Assignment: TodoList#each |       ✔     |            |    |       |
-|11. Assignment: TodoList#select |       ✔     |            |    |       |
-|12. Assignment: TodoList methods |       ✔     |            |    |       |
-|13.  Final Todolist code |       ✔     |            |    |       |
-| 14. Blocks and Variable scope|       ✔     |            |    |       |
-| 15.  Symbol to Proc |       ✔     |            |    |       |
-| 16.Summary |       ✔     |            |    |       |
-| 17.  Quiz |       ✔     |          |    |       |
-| + Read through Discussions |            |          |    |       |
+|  | Once | Twice | Thrice | How well do you know this?
+| :--- | :---: | :---: | :---: | :--- 
+|1. Introduction|✔|14th March||very well
+|2. Closures in Ruby|✔|14th March||very well
+|3.  Calling methods with blocks|✔|14th March||very well
+|4.  Writing methods with blocks|✔|14th March||very well
+|5.  Walk through: build a 'times' method|✔|14th March ||very well
+|6. Walk through: build an 'each' method |✔|14th March ||very well
+|7.  Walk through: build a 'select' method|✔|14th March ||very well
+|8.  Walk through: build a 'reduce' method |✔|14th March ||very well
+|9.  Assignment: TodoList |✔
+|10. Assignment: TodoList#each |✔
+|11. Assignment: TodoList#select |✔
+|12. Assignment: TodoList methods |✔
+|13.  Final Todolist code |✔
+| 14. Blocks and Variable scope|✔
+| 15.  Symbol to Proc |✔
+| 16.Summary |✔
+| 17.  Quiz |✔
+| + Read through Discussions |✔
 
 
 
