@@ -638,24 +638,24 @@ The `&` operator tells Ruby to call `#to_proc` on the symbol and then convert th
 
 ### [Quiz](https://launchschool.com/quizzes/6b2ec033)
 
-| Q | 1st attempt | 2nd Attempt | 3rd Attempt
+| Q | 1st attempt | 2nd Attempt | 3rd Attempt(24th March)
 | :---: | :---: | :---: | :---: |
-|1. |       ✔     |      ✔      |
-|2. |       ✔     |      ✔      |
-|3.  |       X     |      ✔      |
-|4.  |       ✔     |      ✔      |
-|5.  |       X     |      ✔      |
-|6.  |       ✔     |      ✔      |
-|7.  |       X     |      ✔      |
-|8.   |       X     |      ✔      |
-|9.   |       ✔     |      ✔      |
-|10.  |       ✔     |      ✔      |
-|11.  |       ✔     |      ✔      |
-|12.  |       X     |      ✔      |
-|13.   |       ✔     |      X      |
-| 14. |       ✔     |      ✔      |
-| 15.   |       X     |      ✔      |
-| total: |      60%    |      94%    |
+|1. |       ✔     |      ✔      |      ✔
+|2. |       ✔     |      ✔      |      ✔
+|3.  |       X     |      ✔      |      X
+|4.  |       ✔     |      ✔      |      ✔
+|5.  |       X     |      ✔      |      X
+|6.  |       ✔     |      ✔      |      ✔
+|7.  |       X     |      ✔      |      ✔
+|8.   |       X     |      ✔      |      ✔
+|9.   |       ✔     |      ✔      |      ✔
+|10.  |       ✔     |      ✔      |      ✔
+|11.  |       ✔     |      ✔      |      ✔
+|12.  |       X     |      ✔      |      X
+|13.   |       ✔     |      X      |      X
+| 14. |       ✔     |      ✔      |      ✔
+| 15.   |       X     |      ✔      |      ✔
+| total: |      60%    |      94%    | 73%
 
 Question 13 mistake:
 
@@ -664,3 +664,16 @@ Question 13 mistake:
 ```
 This code causes `Symbol#to_proc` to be called, but not `Block#to_proc`
                   
+Question 3 mistake:
+
+Passing a block to a method does create a closure
+
+Question 5 mistake:
+
+Methods that take a block don't have to use `yield` 
+
+Any Ruby method can take a block
+
+Question 12:
+
+When the binding is created `color` is not included, so an error will be raised.
