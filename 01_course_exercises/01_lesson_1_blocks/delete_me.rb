@@ -1,8 +1,14 @@
-def call_me(some_code)
-  some_code.call
-end
+array = [1, 2, 3, 4, 5]
 
-chunk_of_code = Proc.new {puts "hi #{name}"}
-name = "Griffin III"        # re-assign name after Proc initialization
+p array.reduce(10) { |x, acc| p acc - x}
+# def reduce(arr, acc = 0)
+#   output = acc
+#   arr.each do |e|
+#     output = yield(output, e)
+#   end
+#   output
+# end
 
-call_me(chunk_of_code) # => hi Griffin III
+# p reduce(array) { |acc, num| acc + num }                    # => 15
+# p reduce(array, 10) { |acc, num| acc + num }                # => 25
+# p reduce(array) { |acc, num| acc + num if num.odd? }        # => NoMethodError: undefined method `+' for nil:NilClass
