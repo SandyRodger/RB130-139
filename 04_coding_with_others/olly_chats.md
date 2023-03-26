@@ -97,6 +97,7 @@
 ### Questions:
 
 - visual graph for calorie counter output?
+- why is my terminal starting up in the calorie-counter folder?
 
 ### What I've been up to:
 
@@ -105,5 +106,6 @@
   - For some reason the positioning of `require_relative 'calorie_program/program'` effects whether minitest/reporter works. Why?
 - nokogiri gem for html scraping(?)
 - [enumerator objects](https://ruby-doc.org/2.7.7/Enumerator.html)
+- finish RB130 exercises
 
 ### What we talked about:
