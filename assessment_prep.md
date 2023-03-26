@@ -19,30 +19,30 @@ Lesson 1:
 |8.  Walk through: build a 'reduce' method |✔|14th March ||very well
 |9.  Assignment: TodoList |✔|23rd March||very well
 |10. Assignment: TodoList#each |✔|23rd March||very well
-|11. Assignment: TodoList#select |✔
-|12. Assignment: TodoList methods |✔
-|13.  Final Todolist code |✔
-| 14. Blocks and Variable scope|✔
-| 15.  Symbol to Proc |✔
-| 16.Summary |✔
-| 17.  Quiz |✔
+|11. Assignment: TodoList#select |✔|23rd March||Not going in for some reason.
+|12. Assignment: TodoList methods |✔|23rd March||fine
+|13.  Final Todolist code |✔|23rd March||brain barely there
+| 14. Blocks and Variable scope|✔|24th March||understood, I should make cartoons
+| 15.  Symbol to Proc |✔|24th March||understood, I should make flow-charts
+| 16.Summary |✔|24th March||good
+| 17.  Quiz |✔|24th March||60% /90% / 73%
 | + Read through Discussions |✔
 
 
 
 Lesson 2:
 
-|  | Once | Twice | Thrice |
-| :--- | :---: | :---: | :---: |
-|1. Introduction|       ✔     |            |    |
-|2. Setting up Minitest|       ✔     |            |    |
-|3. Lecture: Minitest|       ✔     |            |    |
-|4.  Assertions|       ✔     |            |    |
-|5. SEAT approach |       ✔     |            |    |
-|6. Testing equality|       ✔     |            |    |
-|7.Assignment: write a test suite for todo list|       ✔     |            |    |
-|8. code coverage |       ✔     |            |    |
-|9. Exerceises: more topics|       ✔     |           |    |
+|  | Once | Twice | Thrice | confidence|
+| :--- | :---: | :---: | :---: | :--- |
+|1. Introduction|       ✔     |     24th March       |    | 70% 
+|2. Setting up Minitest|       ✔     |     24th March  |    | 100% 
+|3. Lecture: Minitest|       ✔     |        24th March       |    |
+|4.  Assertions|       ✔     |     25th March       |  |  95% 
+|5. SEAT approach |       ✔     |   25th March           |   | 90% 
+|6. Testing equality|       ✔     |       25th March        |    | 90% (I understand it all, but I'm not sure if I remember it all)
+|7.Assignment: write a test suite for todo list|       ✔     |      25th March        |   85% |
+|8. code coverage |       ✔     |    25th March        |  90%  |
+|9. Exercises: more topics|       ✔     |     26th March      |    | N/A
 |10. Summary|       ✔     |            |    |
 |11. Lesson 2 quiz|       ✔     |            |    |
 | 12.  Challenges |       ✔     |          |    |

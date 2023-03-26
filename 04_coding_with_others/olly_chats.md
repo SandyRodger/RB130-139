@@ -91,3 +91,21 @@
 - When I'm going to take the assessment.
 - Olly's start-up idea for a networking simulator game
 - Git History and Git Lense extensions for rolling back git commits.
+
+## Monday 27th March
+
+### Questions:
+
+- visual graph for calorie counter output?
+- why is my terminal starting up in the calorie-counter folder?
+
+### What I've been up to:
+
+- re-reading lessons.
+- eventually switched to zsh from bash - now gem installations run just fine.
+  - For some reason the positioning of `require_relative 'calorie_program/program'` effects whether minitest/reporter works. Why?
+- nokogiri gem for html scraping(?)
+- [enumerator objects](https://ruby-doc.org/2.7.7/Enumerator.html)
+- finish RB130 exercises
+
+### What we talked about:
