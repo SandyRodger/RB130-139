@@ -410,22 +410,22 @@ Something about `String:IO`. **I have to come back to this with more brain power
 
 |           | 1st attempt | 2nd attempt | 3rd attempt
 | :---: | :---: | :---: | :---: |
-|1.        |       1     |             |
-|2.        |       1     |             |
-|3.        |       1     |             |
-|4.        |       1     |             |
-|5.        |       1     |             |
-|6.        |       0     |             |
-|7.        |       1     |             |
-|8.        |       0     |             |
-|9.        |       0     |             |
-|10.       |       0     |             |
-|11.       |       1     |             |
-|12.       |       1     |             |
-|13.       |       1     |             |
-|14.       |       1     |             |
-|15.       |       1     |             |
-| total:    |      73%    |            
+|1.        |       1     |       1      |
+|2.        |       1     |      1       |
+|3.        |       1     |      1       |
+|4.        |       1     |      1       |
+|5.        |       1     |      1       |
+|6.        |       0     |      1       |
+|7.        |       1     |      1       |
+|8.        |       0     |      1       |
+|9.        |       0     |      1       |
+|10.       |       0     |      0       |
+|11.       |       1     |      1       |
+|12.       |       1     |      1       |
+|13.       |       1     |      1       |
+|14.       |       1     |      1       |
+|15.       |       1     |      0       |
+| total:    |      73%   |       87%     
 
 Errors:
 
@@ -433,3 +433,4 @@ Errors:
 - Question 8: Test methods must be prepended with `test_` otherwise Ruby won't recognise them as tests.
 - Question 9: The arguments are incorrectly ordered. `assert_equal` takes `expt` then `act` so it ought to be `'Kitty'` and then `'@kitty.name'`
 - Question 10: For `assert_match` having the arguments in the wrong order will raise an exception. The two possible options are using `assert` to show that the variable `include`s the string or `assert_match` which takes `matcher`, then `obj` as arguments, so `assert_match(@kitty.miaow, / is miaowing\./)`
+- Question 15: If you have a test for every public method, your code coverage will NOT always be 100%. and Code coverage is a measure of how much of a program is tested by a test suite. 
