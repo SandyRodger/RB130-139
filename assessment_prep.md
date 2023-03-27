@@ -43,8 +43,8 @@ Lesson 2:
 |7.Assignment: write a test suite for todo list|       ✔     |      25th March        |   85% |
 |8. code coverage |       ✔     |    25th March        |  90%  |
 |9. Exercises: more topics|       ✔     |     26th March      |    | N/A
-|10. Summary|       ✔     |            |    |
-|11. Lesson 2 quiz|       ✔     |            |    |
+|10. Summary|       ✔     |     27th March        |    | 70%
+|11. Lesson 2 quiz|       ✔     |     27th March       |    | good retention
 | 12.  Challenges |       ✔     |          |    |
 | + Read through Discussions |            |          |    |
 
