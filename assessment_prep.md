@@ -45,7 +45,8 @@ Lesson 2:
 |9. Exercises: more topics|       ✔     |     26th March      |    | N/A
 |10. Summary|       ✔     |     27th March        |    | 70%
 |11. Lesson 2 quiz|       ✔     |     27th March       |    | good retention
-| 12.  Challenges |       ✔     |          |    |
+| 12.  Challenges |       ✔     |     27th March     |    |
+| RegEx book |       ✔     |         |    |
 | + Read through Discussions |            |          |    |
 
 
