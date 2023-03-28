@@ -1,14 +1,14 @@
 # https://launchschool.com/exercises/0b6294cb
 
-factorial = Enumerator.new do |array|
-  array << 1
-  num = 1
-  loop do
-    multiples = (1..num).to_a
-    array << multiples.reduce(:*)
-    num += 1
-  end
-end
+# factorial = Enumerator.new do |array|
+#   array << 1
+#   num = 1
+#   loop do
+#     multiples = (1..num).to_a
+#     array << multiples.reduce(:*)
+#     num += 1
+#   end
+# end
 
 # p factorial.take(7) # => [1, 1, 2, 6, 24, 120, 720]
 # p factorial.take(10) # => [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880]
@@ -19,17 +19,17 @@ end
 #   break if num > 100
 # end
 
-p factorial.next # => 1
-p factorial.next # => 1
-p factorial.next # => 2
-p factorial.next # => 6
-p factorial.next # => 120
-p factorial.next # => 720
-p factorial.next # => 540
-p factorial.next # => 40320
-p factorial.next # => 362880
-factorial.rewind
-p factorial.next # => 1
+# p factorial.next # => 1
+# p factorial.next # => 1
+# p factorial.next # => 2
+# p factorial.next # => 6
+# p factorial.next # => 120
+# p factorial.next # => 720
+# p factorial.next # => 540
+# p factorial.next # => 40320
+# p factorial.next # => 362880
+# factorial.rewind
+# p factorial.next # => 1
 
 # LS SOLUTION:
 
@@ -43,7 +43,7 @@ p factorial.next # => 1
 #   end
 # end
 
-# # External iterators
+# # # External iterators
 
 # 6.times { |number| puts "#{number}! == #{factorial.next}" }
 # puts "=========================="
