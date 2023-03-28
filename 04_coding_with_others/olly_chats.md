@@ -113,7 +113,7 @@
 - enumerator objects
 - the Array#cycle method
 - the Array#reverse_each method
-- Getting the RB139 assessment out of the way
+- Getting the RB139 assessment out of the way ("Does this make the boat go faster?")
 - Saving Gems in gemfile
 - Outputting Calorie data to an excel graph
 - Fixing Simple-cov (it had been outputting 100% coverage every time)
