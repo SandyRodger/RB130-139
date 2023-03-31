@@ -34,7 +34,22 @@ BLOCKS
 
 8, How do we make a block argument manditory?
 
--
+- save the block as a lambda. 2 ways are these:
+
+```ruby
+def method(block)
+  block.call(1)
+end
+
+lambda1 = ->(x) { x**2 }
+lambda2 = lambda {|x| x**2 }
+lambda1.lambda? # => true
+lambda2.lambda? # => true
+
+p method(lambda1) # => 1
+p method(lambda2) # => 1
+```
+
 
 9, How do methods access both implicit and explicit blocks passed in?
 
@@ -42,17 +57,31 @@ BLOCKS
 
 11, How do we check if a block is passed into a method?
 
+- #block_given?
+
 12, Why is it important to know that methods and blocks can return closures?
+
+pass them around
 
 13, What are the benifits of explicit blocks?
 
+
+
 14, Describe the arity differences of blocks, procs, methods and lambdas.
 
+Yes
+
 15, What other differences are there between lambdas and procs? (might not be assessed on this, but good to know)
+
+return escapes enveloping method for lambdas, procs return out of proc.
+
 
 16, What does & do when in a the method parameter?
 
 def method(&var); end
+
+convert a block to a proc
+
 17, What does & do when in a method invocation argument?
 
 method(&var)
@@ -61,13 +90,21 @@ method(&var)
 arr = [1, 2, 3, 4, 5]
 
 p arr.map(&:to_s) # specifically `&:to_s`
+
+convert a proc to a block
+
 19, How do we get the desired output without altering the method or the method invocations?
 
 def call_this
   yield(2)
 end
 
-# your code here
+# your code here: 
+
+to_s = :to_i
+to_i = :to_s
+
+#
 
 p call_this(&to_s) # => returns 2
 p call_this(&to_i) # => returns "2"
@@ -81,6 +118,9 @@ def time_it
   time_after= Time.now
   puts "It took #{time_after - time_before} seconds."
 end
+
+sandwich code
+
 22, What will be outputted from the method invocation block_method('turtle') below? Why does/doesn't it raise an error?
 
 def block_method(animal)
@@ -90,7 +130,10 @@ end
 block_method('turtle') do |turtle, seal|
   puts "This is a #{turtle} and a #{seal}."
 end
-23, What will be outputted if we add the follow code to the code above? Why?
+
+=> lenient arity
+
+23, What will be outputted if we add the following code to the code above? Why?
 
 block_method('turtle') { puts "This is a #{animal}."}
 24, What will the method call call_me output? Why?
@@ -103,7 +146,10 @@ name = "Robert"
 chunk_of_code = Proc.new {puts "hi #{name}"}
 name = "Griffin"
 
-call_me(chunk_of_code)
+call_me(chunk_of_code) # => hi Griffin
+
+because in Ruby closures keep track of the artifacts in its binding. Because `name` was created before the `chunk_of_code` Proc, it keeps track of reassignment of it.
+
 25, What happens when we change the code as such:
 
 def call_me(some_code)
@@ -113,8 +159,9 @@ end
 chunk_of_code = Proc.new {puts "hi #{name}"}
 name = "Griffin"
 
-call_me(chunk_of_code)
-26, What will the method call call_me output? Why?
+call_me(chunk_of_code) # => undefined local variable error
+
+26, What will the method-call call_me output? Why?
 
 def call_me(some_code)
   some_code.call
@@ -128,7 +175,8 @@ end
 
 chunk_of_code = Proc.new {puts "hi #{name}"}
 
-call_me(chunk_of_code)
+call_me(chunk_of_code) # => Hi Robert
+
 27, Why does the following raise an error?
 
 def a_method(pro)
