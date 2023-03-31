@@ -298,24 +298,80 @@ my_lambda.call("elephant", "cat", "sheep", "dog") # =>  wrong number of argument
 - .gemspec is a special file included in all Gem projects. It provides information such as name, summary, authors, contact info etc about a released Gem. If you want to release a program or library as Gem you must include a .gemspec file.
 
 
-7. How do the Ruby tools relate to one another?
+7. How do the Ruby tools [relate](https://launchschool.com/books/core_ruby_tools/read/conclusion#relationships) to one another?
 
-- [Answer](https://launchschool.com/books/core_ruby_tools/read/conclusion#relationships)
--  Ruby Version Managers help to manage install and organize different versions of Ruby and Gems. Bundler
+-  The Ruby Version Manager is at the top level. It helps to manage, install and organize different versions of Ruby and all the other tools. Under each version of Ruby one can install multiple gems. If you want a gem to be available to different versions of Ruby you have to install them in each version of ruby. 
+-  Bundler is a gem which manages the dependencies of a project ie. which versions of gems and ruby are required. It attempts to determine which versions of which gems your program requires and makes sure that they are installed.
+- Rake is another gem which automates repetitive routine tasks. These tasks are controlled in the Rakefile. 
 
 ## Regex
 
 1. What are patterns?
+
+- Regex patterns are the compontents that make up a Regular Expresssion. The terms 'regex' and 'pattern' are sometimes used interchangeably. We use RegEx patterns to search sets of strings for matches.
+
 2. How do you define a regex?
+
+- Always between two `/`
+- They can become much mroe complicated after that.
+- Example: `/cat/`
+
 3. What is concatenation in regex? How is it achieved?
+
+- This is simply putting patterns next to each other to combine into a more complicated pattern.
+- At its most basic this means individual letters. i.e `c` with `a` with `t` is `/cat/` and will search a string for instances of `cat`. 
+- Concatenations can also include more complicated patterns. ie. `/(h|H)otel/`.
+
 4. What is alternation in regex? How is it achieved?
+
+- This is a regex that searches for one of multiple options to match its pattern. It is achieved with a `|` (pipe). For example: `/(h|H)otel/`
+
 5. What are a few examples of the most basic kind of regex patterns?
-6. What is a meta-character? How do you deal with them in regex? List a few exampled.
-7. What is a character class? How are they created? Give specific examples.
+
+- `/dog/`
+- `/a{3}/`
+- `\/A\`
+
+6. What is a meta-character? How do you deal with them in regex? List a few examples.
+
+- Meta-characters are special characters that indicate to the regex a special thing to seach for. 
+- `$` is an example of this. It tells Ruby to look for the end of the line. FOr instance `/#$/` would return any line that begins with a hash. If one wants to search for a literal $ one needs to escape the meta-character with a `\`, ie. `\$24` for $24.
+
+7. What is a character class? How are they created? Give specific examples. 
+
+- Character classes are regex set between two square brackets. They indicate that ruby should search for any individual characters included in the character class, rather than a concatenation of the characters. ie. `/[cat]/` will match `c`, `a` or `t`, but `\cat\` will only match `cat`.
+
 8. How are meta-characters different inside and outside of a character class?
+
+- Within a character class the number of meta-characers dwindles from 15 to 5. They are `^`, `-`, `/`, `[` and `]`. Some of these 5 are also not meta-characters in certain placements. The `^` is non-meta if not at the beginning of the class and `-` is non-mta if it is at the beginning of the class. 
+
 9. What is an anchor? What, specifically, do you have to watch out for with anchors when it comes to Ruby regex?
+
+- The `^` and `$` meta-characters are anchors in Ruby, which means they set the regex to only match the beginning or end of a string. 
+
 10. What is a quantifier? How do they operate? Give explicit examples.
+
+- In regex quantifiers are special characters that tell Ruby how many of a pattern it should search for. Examples are `*`, `+`, `?`, `{num}`, `{num,limit}`. For instance `/a*/` indicates that the regex should match as many `a` characters as there are, including zero, so the spaces between characters will be matched also.
+
 11. What is a capture group and how is it used?
+
+- Capture groups are regex patterns defined within parentheses that can be referenced later in the regex. These are useful if you want to use the same character later on in the regex, but you're not yet sure what the character will be. The most useful example is quotation marks, where one doesn't know ewhether single or double quotees will be used. The capture groups are then referred to by backslashed number, counting how many there are in the string. So for example the regex for this would look like: `/(["']).+?\1/`
+
 12. How do you test a string against a regex?
+
+- The #match method can be called on a string and takes a regex as argument (or can be called on a regex with a string as an argument). It returns a MatchData Object indicating whether or not the regex is found within the string.
+
 13. How can you split strings into multiple items with a regex?
+
+- #split returns an array populated by the parts of the string which have been divided.
+
 14. How do you construct new strings from existing strings?
+
+- Use `String#sub` or `String#gsub` (sub transforms the first match found, gsub traensforms all subs - it is global-sub) to match the part of a string you want to replace, then as second argument to the method pass in the text to be entered:
+```ruby
+puts text.sub(/(['"]).+/, 'The Time Machine') # => We read The Time Machine
+```
+- You can also use capture groups:
+```ruby
+puts text.sub(/(['"]).+\1/, '\1The Time Machine\1') # => We read "The Time Machine".
+```
