@@ -78,23 +78,26 @@ return escapes enveloping method for lambdas, procs return out of proc.
 
 16, What does & do when in a the method parameter?
 
+```ruby
 def method(&var); end
 
 convert a block to a proc
+```
 
 17, What does & do when in a method invocation argument?
-
+```ruby
 method(&var)
+```
 18, What is happening in the code below?
-
+```ruby
 arr = [1, 2, 3, 4, 5]
 
 p arr.map(&:to_s) # specifically `&:to_s`
 
 convert a proc to a block
-
+```
 19, How do we get the desired output without altering the method or the method invocations?
-
+```ruby
 def call_this
   yield(2)
 end
@@ -108,21 +111,24 @@ to_i = :to_s
 
 p call_this(&to_s) # => returns 2
 p call_this(&to_i) # => returns "2"
+```
 20, How do we invoke an explicit block passed into a method using &? Provide example.
 
-21, What concept does the following code demonstrate?
 
+
+21, What concept does the following code demonstrate?
+```ruby
 def time_it
   time_before = Time.now
   yield
   time_after= Time.now
   puts "It took #{time_after - time_before} seconds."
 end
-
+```
 sandwich code
 
 22, What will be outputted from the method invocation block_method('turtle') below? Why does/doesn't it raise an error?
-
+```ruby
 def block_method(animal)
   yield(animal)
 end
@@ -130,11 +136,11 @@ end
 block_method('turtle') do |turtle, seal|
   puts "This is a #{turtle} and a #{seal}."
 end
-
+```
 => lenient arity
 
 23, What will be outputted if we add the following code to the code above? Why?
-
+```ruby
 block_method('turtle') { puts "This is a #{animal}."}
 24, What will the method call call_me output? Why?
 
@@ -147,11 +153,11 @@ chunk_of_code = Proc.new {puts "hi #{name}"}
 name = "Griffin"
 
 call_me(chunk_of_code) # => hi Griffin
-
+```
 because in Ruby closures keep track of the artifacts in its binding. Because `name` was created before the `chunk_of_code` Proc, it keeps track of reassignment of it.
 
 25, What happens when we change the code as such:
-
+```ruby
 def call_me(some_code)
   some_code.call
 end
@@ -160,9 +166,9 @@ chunk_of_code = Proc.new {puts "hi #{name}"}
 name = "Griffin"
 
 call_me(chunk_of_code) # => undefined local variable error
-
+```
 26, What will the method-call call_me output? Why?
-
+```ruby
 def call_me(some_code)
   some_code.call
 end
@@ -176,17 +182,18 @@ end
 chunk_of_code = Proc.new {puts "hi #{name}"}
 
 call_me(chunk_of_code) # => Hi Robert
-
+```
 27, Why does the following raise an error?
-
+```ruby
 def a_method(pro)
   pro.call
 end
 
 a = 'friend'
 a_method(&a)
+```
 28, Why does the following code raise an error?
-
+```ruby
 def some_method(block)
   block_given?
 end
@@ -194,8 +201,9 @@ end
 bl = { puts "hi" }
 
 p some_method(bl)
+```
 29, Why does the following code output false?
-
+```ruby
 def some_method(block)
   block_given?
 end
@@ -203,8 +211,9 @@ end
 bloc = proc { puts "hi" }
 
 p some_method(bloc)
+```
 30, How do we fix the following code so the output is true? Explain
-
+```ruby
 def some_method(block)
   block_given? # we want this to return `true`
 end
@@ -212,10 +221,11 @@ end
 bloc = proc { puts "hi" } # do not alter this code
 
 p some_method(bloc)
+```
 31, How does Kernel#block_given? work?
 
 32, Why do we get a LocalJumpError when executing the below code? & How do we fix it so the output is hi? (2 possible ways)
-
+```ruby
 def some(block)
   yield
 end
@@ -223,16 +233,18 @@ end
 bloc = proc { p "hi" } # do not alter
 
 some(bloc)
+```
 33, What does the following code tell us about lambda's? (probably not assessed on this but good to know)
-
+```ruby
 bloc = lambda { p "hi" }
 
 bloc.class # => Proc
 bloc.lambda? # => true
 
 new_lam = Lambda.new { p "hi, lambda!" } # => NameError: uninitialized constant Lambda
+```
 34, What does the following code tell us about explicitly returning from proc's and lambda's? (once again probably not assessed on this, but good to know ;)
-
+```ruby
 def lambda_return
   puts "Before lambda call."
   lambda {return}.call
@@ -249,8 +261,9 @@ lambda_return #=> "Before lambda call."
               #=> "After lambda call."
 
 proc_return #=> "Before proc call."
+```
 35, What will #p output below? Why is this the case and what is this code demonstrating?
-
+```ruby
 def retained_array
   arr = []
   Proc.new do |el|
@@ -264,7 +277,7 @@ arr.call('one')
 arr.call('two')
 p arr.call('three')
 TESTING WITH MINITEST
-
+```
 36, What is a test suite?
 
 37, What is a test?
@@ -273,9 +286,15 @@ TESTING WITH MINITEST
 
 39, What do testing framworks provide?
 
+ In Ruby testing frameworks such as MiniTest and Rspec provide ways to write and automate tests for your code. MiniTest provides a list of assertions to test your code against your expectations. Minitest also provides setup and teardown methods to reduce repetition.
+
 40, What are the differences of Minitest vs RSpec
 
+These are both testing frameworks that allow a dev to write and automate tests for their program. Minitest is written in Ruby, Rspec uses a DSL which tries to mirror natural English. Minitest can do everything Rspec can do and their output is the same, it is only a question of how the dev prefers to write the tests. Minitest is a bundled Gem which means it is maintained outside of Rby's core library. It is also Ruby's default testing librarry.
+
 41, What is Domain Specific Language (DSL)?
+
+A DSL is a language created for a specific environment or task. Rspec uses a DSL. SQL is another. In contrast to general programming lamnguages like RUby and Python which are designed to be flexible and can be used for many different tasks
 
 42, What is the difference of assertion vs refutation methods?
 
@@ -293,7 +312,11 @@ CORE TOOLS
 
 48, What are the purposes of core tools?
 
+Core tools are there to help developers with various tasks involved with the creation of programs. Some of these tasks are arduous or complicated and their automation saves devs time and energy. Bundler for example is a dependency manager that ensures that a project is using the right version of ruby and has the necessary gems installed. In this section of the course we have learnt about Rake, RubyGems and Ruby Version Managers as well.
+
 49, What are RubyGems and why are they useful?
+
+Ruby gems are packages of code available for download from the Ruby Gems website. Each gem provides a different fundtiuon and so is useful in a different way. For indstance, the Rubocop gem scans a program and checks for formatting and other errors. It comes with various commands to do with this process. There are hundreds of RubyGems and they are a key part of writing programs in Ruby.
 
 50, What are Version Managers and why are they useful?
 
