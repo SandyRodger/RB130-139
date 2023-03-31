@@ -71,9 +71,9 @@ Extra:
 
 |  | Once | Twice | Thrice |
 | :--- | :---: | :---: | :---: |
-|1. Write Sho answers|            |     X       |  X  |
+|1. Write Sho answers|     31 March       |     X       |  X  |
 |2. Go through Ginni's notes and make your own notes|            |      X      | X   |
-|3. Write answers to Ginni's 'open ended questions'|            |      X      |  X  |
+|3. Write answers to Ginni's 'open ended questions'|     30/31 March        |      X      |  X  |
 
 Quesions:
 
