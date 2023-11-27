@@ -43,24 +43,26 @@ Lesson 2:
 |7.Assignment: write a test suite for todo list|       ✔     |      25th March        |   85% |
 |8. code coverage |       ✔     |    25th March        |  90%  |
 |9. Exercises: more topics|       ✔     |     26th March      |    | N/A
-|10. Summary|       ✔     |            |    |
-|11. Lesson 2 quiz|       ✔     |            |    |
-| 12.  Challenges |       ✔     |          |    |
+|10. Summary|       ✔     |     27th March        |    | 70%
+|11. Lesson 2 quiz|       ✔     |     27th March       |    | good retention
+| 12.  Challenges |       ✔     |     27th March     |    |
+| RegEx book |       ✔     |         |    |
 | + Read through Discussions |            |          |    |
 
 
 Lesson 3:
 
-|  | Once | Twice | Thrice |
-| :--- | :---: | :---: | :---: |
-|1. The Ruby Toolbox|       ✔     |            |    |
-|2. Setting up Project Directory|       ✔     |            |    |
-|3. Setting up Gemfile|       ✔     |            |    |
-|4.  Adding another Gem|       ✔     |            |    |
-|5. Setting up Rakefile |       ✔     |            |    |
-|6. Preparing a Rubygem|       ✔     |            |    |
-|7. Summary|       ✔     |            |    |
-|8. Quiz|       ✔     |            |    |
+|  | Once | Twice | Thrice | confidence|
+| :--- | :---: | :---: | :---: | :---: |
+| The Ruby Toolbox Book|       ✔     |      27th March        |    | This is unbelieveably boring - and most of it isn't relevant. 2nd read unfinished
+|1. The Ruby Toolbox|       ✔     |      27th March        |    |
+|2. Setting up Project Directory|       ✔     |    28th March        |    |
+|3. Setting up Gemfile|       ✔     |    28th March         |    |
+|4.  Adding another Gem|       ✔     |      28th March       |    |
+|5. Setting up Rakefile |       ✔     |     28th March        |    |
+|6. Preparing a Rubygem|       ✔     |        28th March         |    |
+|7. Summary|       ✔     |        28th March         |    |
+|8. Quiz|       ✔     |         28th March        |    |
 |9. Feedback|       ✔     |     X      |  X  |
 | + Read through Discussions |            |          |    |
 
@@ -69,9 +71,9 @@ Extra:
 
 |  | Once | Twice | Thrice |
 | :--- | :---: | :---: | :---: |
-|1. Write Sho answers|            |     X       |  X  |
+|1. Write Sho answers|     31 March       |     X       |  X  |
 |2. Go through Ginni's notes and make your own notes|            |      X      | X   |
-|3. Write answers to Ginni's 'open ended questions'|            |      X      |  X  |
+|3. Write answers to Ginni's 'open ended questions'|     30/31 March        |      X      |  X  |
 
 Quesions:
 

@@ -48,3 +48,25 @@ end
 
 ## [Lesson 3 summary](https://launchschool.com/lessons/2fdb1ef0/assignments/8baba62e)
 
+### [Quiz](https://launchschool.com/quizzes/d8afd81f)
+
+|           | 1st attempt | 2nd attempt (28th March) | 3rd attempt
+| :---: | :---: | :---: | :---: |
+|1.        |       1     |       c,e (nope - b)      |
+|2.        |       1     |       b, d (nope - just d)    |
+|3.        |       1     |       c,e   (tick)   |
+|4.        |       1     |         a  (tick)    |
+|5.        |       1     |         d. (tick)    |
+|6.        |       1     |         a.  (tick)   |
+|7.        |       1     |          c   (tick)  |
+|8.        |       1     |           d (tick) |
+|9.        |       1     |        b, d  (tick)   |
+|10.       |       1     |         b  (tick)  |
+|11.       |       1     |          c (tick)  |
+| total:    |      100%   |         82%         |
+
+Errors:
+
+- Question 1: Bundler lets you manage the various dependencies in a Ruby project (not rbenv and RVM)
+- Question 2: Rake automates common tasks required to build, test, package, and install programs. (not Bundler)
+ 
