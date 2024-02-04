@@ -167,17 +167,6 @@ end
 
 ### [Quiz](https://launchschool.com/quizzes/d8afd81f)
 
-1. B (Although I want to write also C and E, but I won't)
-2. D (Not bundler? not bundler)
-3. C, E
-4. A
-5. D
-6. A
-7. C
-8. D
-9. B, C, D
-10. B
-11. C
 |           | 1st attempt | 2nd attempt (28th March '22) | 3rd attempt (4.2.24)|
 | :---: | :---: | :---: | :---: |
 |1.        |       1     |       c,e (nope - b)      | B (tick)|
